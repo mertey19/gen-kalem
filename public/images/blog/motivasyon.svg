@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img">
+  <defs>
+    <linearGradient id="g-mv" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F7F9FC"/>
+    </linearGradient>
+    <pattern id="p-mv" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="rgba(23,35,91,.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g-mv)"/>
+  <rect width="1200" height="675" fill="url(#p-mv)"/>
+  
+  <circle cx="960" cy="180" r="190" fill="#83C341" opacity=".12"/>
+  <g transform="translate(150 140)">
+    <rect x="0" y="300" width="104" height="90" rx="18" fill="#17235B" opacity="0.14"/><rect x="128" y="222" width="104" height="168" rx="18" fill="#17235B" opacity="0.34"/><rect x="256" y="144" width="104" height="246" rx="18" fill="#17235B" opacity="0.54"/><rect x="384" y="66" width="104" height="324" rx="18" fill="#17235B" opacity="0.7400000000000001"/>
+    <polyline points="52,282 180,224 308,168 436,96" fill="none" stroke="#63A52A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="52" cy="282" r="12" fill="#FFFFFF" stroke="#63A52A" stroke-width="6"/><circle cx="180" cy="224" r="12" fill="#FFFFFF" stroke="#63A52A" stroke-width="6"/><circle cx="308" cy="168" r="12" fill="#FFFFFF" stroke="#63A52A" stroke-width="6"/><circle cx="436" cy="96" r="12" fill="#FFFFFF" stroke="#63A52A" stroke-width="6"/>
+  </g>
+  <g transform="translate(770 250)">
+    <path d="M120 250 L120 120" stroke="#63A52A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M120 150 C 120 96 78 66 34 62 C 34 116 72 148 120 150 Z" fill="#83C341"/>
+    <path d="M120 190 C 120 140 160 112 204 108 C 204 160 168 190 120 190 Z" fill="#63A52A"/>
+    <rect x="52" y="248" width="136" height="26" rx="13" fill="#17235B" opacity=".18"/>
+  </g>
+</svg>

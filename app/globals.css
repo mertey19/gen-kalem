@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Marka paleti — Genç Kalem logosundan türetilmiştir.
+   Lacivert gövde, yeşil halka/yaprak, beyaz tipografi.
+---------------------------------------------------------------- */
+@theme {
+  --color-navy-950: #080d24;
+  --color-navy-900: #0d1538;
+  --color-navy-800: #121c4a;
+  --color-navy-700: #17235b;
+  --color-navy-600: #1f2f74;
+  --color-navy-500: #2b3f92;
+  --color-navy-300: #9aa5cd;
+  --color-navy-200: #c3cae4;
+  --color-navy-100: #e3e7f3;
+  --color-navy-50: #f1f3fa;
+
+  /*
+   * 800/700/600 tonları ÜZERİNDE BEYAZ METİN taşıyan dolu butonlar ve
+   * beyaz zemin üzerindeki küçük yeşil metinler için kullanılır; bu yüzden
+   * WCAG AA (4.5:1) eşiğini geçecek şekilde koyulaştırılmıştır.
+   * Markanın açık yeşili (500 ve üstü) vurgu/çizgi/zemin olarak korunur.
+   */
+  --color-leaf-800: #2f5410;
+  --color-leaf-700: #3f6f16;
+  --color-leaf-600: #46801a;
+  --color-leaf-500: #83c341;
+  --color-leaf-400: #9bd162;
+  --color-leaf-300: #b6df8f;
+  --color-leaf-200: #d5eeb8;
+  --color-leaf-100: #eaf7db;
+  --color-leaf-50: #f4fbeb;
+
+  --color-mist: #f7f9fc;
+  --color-line: #e5e9f2;
+
+  --font-display: var(--font-manrope), "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-inter), "Segoe UI", system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(13 21 56 / 0.04), 0 8px 24px -12px rgb(13 21 56 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(13 21 56 / 0.05), 0 18px 40px -16px rgb(13 21 56 / 0.22);
+  --shadow-float: 0 10px 30px -8px rgb(13 21 56 / 0.28);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Yapışkan başlığın altında kalmaması için bölüm hedefleri */
+  section[id],
+  div[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-navy-900);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    /* Yatay taşmayı her koşulda engelle */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-leaf-600);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-leaf-200);
+    color: var(--color-navy-900);
+  }
+}
+
+/* Hero girişi: LCP'yi geciktirmemek için JS değil CSS animasyonu kullanılır. */
+@keyframes gk-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gk-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: gk-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-fade-in {
+    animation: gk-fade-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Bölüm başlarında kullanılan ince yeşil vurgu çizgisi */
+  .accent-rule::before {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      var(--color-leaf-500),
+      var(--color-leaf-400)
+    );
+  }
+
+  /* Arka plan dokuları — düşük opaklık, dikkat dağıtmaz */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(23 35 91 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(23 35 91 / 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(
+      rgb(23 35 91 / 0.12) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Hareket azaltma tercihine tam uyum */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}

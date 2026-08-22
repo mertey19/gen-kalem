@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img">
+  <defs>
+    <linearGradient id="g-vr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F7F9FC"/>
+    </linearGradient>
+    <pattern id="p-vr" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="rgba(23,35,91,.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g-vr)"/>
+  <rect width="1200" height="675" fill="url(#p-vr)"/>
+  
+  <circle cx="240" cy="180" r="160" fill="#83C341" opacity=".10"/>
+  <g transform="translate(180 170)">
+    <path d="M0 28 A28 28 0 0 1 28 0 H332 A28 28 0 0 1 360 28 V182 A28 28 0 0 1 332 210 H108 L54 258 V210 H28 A28 28 0 0 1 0 182 Z" fill="#FFFFFF" stroke="#17235B" stroke-opacity=".14" stroke-width="2"/>
+    <rect x="42" y="58" width="220" height="16" rx="8" fill="#17235B" opacity=".22"/>
+    <rect x="42" y="98" width="276" height="14" rx="7" fill="#17235B" opacity=".1"/>
+    <rect x="42" y="132" width="180" height="14" rx="7" fill="#17235B" opacity=".1"/>
+  </g>
+  <g transform="translate(640 300)">
+    <path d="M360 28 A28 28 0 0 0 332 0 H28 A28 28 0 0 0 0 28 V182 A28 28 0 0 0 28 210 H252 L306 258 V210 H332 A28 28 0 0 0 360 182 Z" fill="#17235B"/>
+    <rect x="42" y="58" width="200" height="16" rx="8" fill="#83C341"/>
+    <rect x="42" y="98" width="276" height="14" rx="7" fill="#FFFFFF" opacity=".28"/>
+    <rect x="42" y="132" width="150" height="14" rx="7" fill="#FFFFFF" opacity=".28"/>
+  </g>
+</svg>

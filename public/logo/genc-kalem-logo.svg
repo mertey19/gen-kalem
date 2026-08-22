@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Genç Kalem Eğitim Kurumları">
+  <title>Genç Kalem Eğitim Kurumları</title>
+  <!--
+    GEÇİCİ LOGO — orijinal rozetin yeniden çizimidir, orijinal dosya değildir.
+    Orijinali public/logo/ içine koyup data/business.ts > logo.src yolunu güncelleyin.
+  -->
+  <defs>
+    <path id="gk-arc-top" d="M 52,256 A 204,204 0 0 1 460,256" />
+    <path id="gk-arc-bottom" d="M 34,256 A 222,222 0 0 0 478,256" />
+    <clipPath id="gk-right-page">
+      <path d="M 370,166 L 268,196 L 268,354 L 370,302 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Dış yeşil halka -->
+  <circle cx="256" cy="256" r="254" fill="#6CB33F" />
+  <!-- Lacivert bant -->
+  <circle cx="256" cy="256" r="232" fill="#1F2A5F" />
+  <!-- İnce yeşil ayraç + beyaz iç alan -->
+  <circle cx="256" cy="256" r="178" fill="#6CB33F" />
+  <circle cx="256" cy="256" r="172" fill="#FFFFFF" />
+
+  <!-- Kurum adı: üst kavis -->
+  <text
+    fill="#FFFFFF"
+    font-family="Georgia, 'Times New Roman', 'Nimbus Roman', serif"
+    font-size="52"
+    letter-spacing="15"
+  >
+    <textPath href="#gk-arc-top" startOffset="50%" text-anchor="middle">GENÇ KALEM</textPath>
+  </text>
+
+  <!-- Kurum adı: alt kavis -->
+  <text
+    fill="#FFFFFF"
+    font-family="Georgia, 'Times New Roman', 'Nimbus Roman', serif"
+    font-size="42"
+    letter-spacing="7"
+  >
+    <textPath href="#gk-arc-bottom" startOffset="50%" text-anchor="middle">EĞİTİM KURUMLARI</textPath>
+  </text>
+
+  <!-- Kitap: sol sayfa -->
+  <path d="M 142,166 L 244,196 L 244,354 L 142,302 Z" fill="#1F2A5F" />
+
+  <!-- Kitap: sağ sayfa — lacivert gövde ve sayfa eğimine paralel yeşil şeritler -->
+  <g clip-path="url(#gk-right-page)">
+    <path d="M 370,166 L 268,196 L 268,354 L 370,302 Z" fill="#1F2A5F" />
+    <path d="M 378,212 L 378,256 L 260,290 L 260,246 Z" fill="#6CB33F" />
+    <path d="M 378,272 L 378,316 L 260,350 L 260,306 Z" fill="#6CB33F" />
+  </g>
+
+  <!-- Yeşil yaprak / alev — kitabın orta boşluğundan yükselir -->
+  <path
+    d="M 282,100
+       C 320,148 330,200 308,252
+       C 298,278 280,306 270,344
+       L 258,344
+       C 264,300 270,252 268,208
+       C 266,166 272,128 282,100 Z"
+    fill="#6CB33F"
+  />
+  <path
+    d="M 282,100
+       C 262,140 254,178 256,214
+       C 258,250 262,300 258,344
+       L 250,344
+       C 244,296 242,244 250,196
+       C 256,158 268,124 282,100 Z"
+    fill="#8BC94F"
+  />
+
+  <!-- GK monogramı -->
+  <text
+    x="192"
+    y="280"
+    fill="#FFFFFF"
+    font-family="Georgia, 'Times New Roman', 'Nimbus Roman', serif"
+    font-size="86"
+    text-anchor="middle"
+    letter-spacing="1"
+  >GK</text>
+
+  <!-- Kalem ucu -->
+  <path d="M 234,344 L 278,344 L 256,410 Z" fill="#D3A45C" />
+  <path d="M 247,382 L 265,382 L 256,410 Z" fill="#2B2B2B" />
+</svg>
