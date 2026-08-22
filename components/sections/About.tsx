@@ -27,10 +27,10 @@ export function About() {
           <Reveal className="relative order-last lg:order-first">
             <div className="relative overflow-hidden rounded-[1.75rem] border border-navy-100 shadow-lift">
               <Image
-                src="/images/gallery/g2.svg"
-                alt="Genç Kalem Eğitim Kurumları'nın çalışma ortamını simgeleyen marka kompozisyonu"
-                width={640}
-                height={480}
+                src="/images/gallery/g5.jpg"
+                alt="Genç Kalem Eğitim Kurumları'nda öğrenciler sınıfta çalışırken"
+                width={1200}
+                height={1600}
                 sizes="(max-width: 1024px) 92vw, 45vw"
                 className="h-auto w-full"
               />

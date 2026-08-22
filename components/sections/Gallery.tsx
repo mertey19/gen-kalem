@@ -10,16 +10,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { galleryItems } from "@/data/gallery";
 
-/** Masonry hissi için değişken yükseklikler (masaüstü). */
-const spans = [
-  "lg:row-span-2",
-  "",
-  "",
-  "",
-  "lg:row-span-2",
-  "",
-];
-
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
   const reduce = useReducedMotion();
@@ -57,13 +47,15 @@ export function Gallery() {
           description="Kurumumuzdan görüntüler. Güncel paylaşımlarımıza sosyal medya hesaplarımızdan da ulaşabilirsiniz."
         />
 
-        <ul className="mt-12 grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[210px] lg:grid-cols-3 lg:gap-4">
+        <ul className="mt-12 grid auto-rows-[170px] grid-flow-row-dense grid-cols-2 gap-3 sm:auto-rows-[200px] lg:grid-cols-3 lg:gap-4">
           {galleryItems.map((item, index) => (
             <Reveal
               as="li"
               key={item.src}
               delay={(index % 3) * 0.05}
-              className={`${spans[index % spans.length]} min-w-0`}
+              className={`min-w-0 ${item.tall ? "lg:row-span-2" : ""} ${
+                item.wide ? "lg:col-span-2" : ""
+              }`}
             >
               <button
                 type="button"
@@ -76,7 +68,11 @@ export function Gallery() {
                   alt={item.alt}
                   fill
                   loading="lazy"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 45vw, 33vw"
+                  sizes={
+                    item.wide
+                      ? "(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 66vw"
+                      : "(max-width: 640px) 50vw, (max-width: 1024px) 45vw, 33vw"
+                  }
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
                 <span
@@ -85,7 +81,13 @@ export function Gallery() {
                 />
                 <span
                   aria-hidden="true"
-                  className="absolute bottom-3 right-3 grid h-9 w-9 translate-y-2 place-items-center rounded-xl bg-white/95 text-navy-800 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                  className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-950/80 to-transparent px-4 pb-3 pt-10 text-left text-sm font-semibold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >
+                  {item.caption}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="absolute right-3 top-3 grid h-9 w-9 -translate-y-2 place-items-center rounded-xl bg-white/95 text-navy-800 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                 >
                   <ZoomIn size={17} />
                 </span>
@@ -133,6 +135,9 @@ export function Gallery() {
                 sizes="(max-width: 768px) 92vw, 768px"
                 className="h-auto w-full"
               />
+              <p className="border-t border-navy-100 px-5 py-3.5 text-sm font-medium text-navy-800">
+                {activeItem.caption}
+              </p>
             </motion.div>
           </motion.div>
         ) : null}

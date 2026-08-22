@@ -44,20 +44,27 @@ Logo kare (1:1) oranlıdır ve tüm bileşenlerde en/boy eşit verilir; bu yüzd
 oranı bozulmaz. Header, mobil menü, footer, hero rozeti, blog CTA'sı ve
 favicon bu tek değerden beslenir.
 
-### 2. Gerçek fotoğrafları ekleyin
+### 2. Görseller
 
-`public/images/gallery/` altındaki 6 görsel **geçici marka grafikleridir**,
-kurumun gerçek fotoğrafları değildir. Gerçek fotoğrafları bu klasöre koyup
-`data/gallery.ts` listesini güncelleyin.
+Galeri ve "Hakkımızda" bölümü **kurumun gerçek fotoğraflarını** kullanır
+(`public/images/gallery/*.jpg`). Fotoğraflar web için yeniden boyutlandırılmış
+(uzun kenar 1600 px), EXIF ve konum verisi temizlenmiş JPEG'lerdir.
 
-Liste boşaltılırsa galeri bölümü hiç render edilmez:
+Yeni fotoğraf eklemek için dosyayı `public/images/gallery/` içine koyup
+`data/gallery.ts` listesine bir satır ekleyin. `tall` (dikey) ve `wide` (geniş)
+alanları masaüstü ızgarasındaki yerleşimi belirler. Liste boşaltılırsa galeri
+bölümü hiç render edilmez:
 
 ```ts
 export const galleryItems: GalleryItem[] = [];
 ```
 
-Aynısı `public/images/hero-study.svg` ve `public/images/blog/*.svg` için de
-geçerlidir; gerçek görsellerle değiştirilebilirler.
+Hâlâ **geçici** olan görseller: `public/images/hero-study.svg` (hero
+illüstrasyonu) ve `public/images/blog/*.svg` (blog kapakları). İstenirse gerçek
+fotoğraflarla değiştirilebilirler.
+
+> Fotoğraflarda tanınabilir kişiler var; yayına almadan önce KVKK açısından
+> gerekli açık rızaların alınmış olduğundan emin olun.
 
 ### 3. Alan adını tanımlayın
 
