@@ -68,7 +68,11 @@ Vercel'de ortam değişkeni olarak tanımlayın:
 NEXT_PUBLIC_SITE_URL=https://gercek-alan-adiniz.com
 ```
 
-Tanımlanmazsa `lib/site.ts` içindeki varsayılan kullanılır.
+Değişkeni **boş bırakmayın**; ya gerçek adresi yazın ya da hiç tanımlamayın.
+`lib/site.ts` boş/geçersiz değeri yok sayar ve sırasıyla Vercel'in üretim
+alan adına, önizleme adresine, en son da dosyadaki varsayılana düşer.
+Protokolsüz yazılan değerlerin (`gen-kalem.vercel.app`) başına `https://`
+eklenir, sondaki `/` temizlenir.
 
 ### 4. WhatsApp numarasını doğrulayın
 
