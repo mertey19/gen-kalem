@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { Footer } from "@/components/layout/Footer";
@@ -108,6 +109,7 @@ export default function RootLayout({
 
         {/* Mobil alt iletişim çubuğunun içeriği kapatmaması için boşluk */}
         <div aria-hidden="true" className="safe-bottom h-[4.25rem] md:hidden" />
+        <Analytics />
       </body>
     </html>
   );
