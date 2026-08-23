@@ -9,7 +9,7 @@ export const post: BlogPost = {
   date: "2026-08-14",
   updatedAt: "2026-08-14",
   image: "/images/blog/deneme-analizi.jpg",
-  imageAlt: "Sıranın üzerinde cevap kâğıdı ve kalemle sınav çalışması",
+  imageAlt: "Öğrenciler sıralarında deneme sınavı çözerken",
   body: [
     {
       type: "p",
