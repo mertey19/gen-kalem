@@ -6,6 +6,10 @@ import { post as denemeAnalizi } from "@/content/blog/deneme-sinavi-sonuclari-na
 import { post as motivasyon } from "@/content/blog/ders-calisirken-motivasyonu-korumak";
 import { post as tekrarYontemleri } from "@/content/blog/ogrenciler-icin-etkili-tekrar-yontemleri";
 import { post as veliRehberi } from "@/content/blog/veliler-icin-sinav-doneminde-destek-rehberi";
+import { post as kursSecimi } from "@/content/blog/mersinde-kurs-secerken-dikkat-edilmesi-gerekenler";
+import { post as yksYolHaritasi } from "@/content/blog/ykse-nereden-baslamali-tyt-ayt-yol-haritasi";
+import { post as lgsHazirlik } from "@/content/blog/lgs-hazirlik-surecinde-bilinmesi-gerekenler";
+import { post as etut } from "@/content/blog/etut-nedir-ogrenciye-ne-kazandirir";
 
 export type { BlogBlock, BlogCategory, BlogPost };
 
@@ -16,6 +20,10 @@ const rawPosts: BlogPost[] = [
   motivasyon,
   tekrarYontemleri,
   veliRehberi,
+  kursSecimi,
+  yksYolHaritasi,
+  lgsHazirlik,
+  etut,
 ];
 
 /** Aynı slug'ın iki kez tanımlanmasını derleme/çalışma anında yakalar. */

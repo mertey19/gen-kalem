@@ -24,17 +24,17 @@ export const programs: Program[] = [
     slug: "sinav-hazirlik",
     title: "Sınav Hazırlık Programları",
     description:
-      "Sınav sürecine hazırlanan öğrenciler için konu çalışması, soru çözümü ve düzenli tekrarı bir arada yürüten program yapısı.",
+      "YKS (TYT–AYT) ve LGS'ye hazırlanan öğrenciler için konu çalışması, soru çözümü ve düzenli tekrarı bir arada yürüten program yapısı.",
     icon: "target",
-    highlights: ["Konu anlatımı", "Soru çözümü", "Düzenli tekrar"],
+    highlights: ["YKS (TYT–AYT)", "LGS", "Konu anlatımı", "Soru çözümü"],
   },
   {
     slug: "okula-destek",
     title: "Okula Destek Programları",
     description:
-      "Okul müfredatını takip eden, derslerde geride kalmamayı ve konuları zamanında tamamlamayı hedefleyen destek çalışmaları.",
+      "Ortaokul ve lise öğrencileri için okul müfredatını takip eden, derslerde geride kalmamayı ve konuları zamanında tamamlamayı hedefleyen destek çalışmaları.",
     icon: "bookOpen",
-    highlights: ["Müfredat takibi", "Konu tamamlama", "Sınav öncesi tekrar"],
+    highlights: ["Ortaokul", "Lise", "Müfredat takibi", "Konu tamamlama"],
   },
   {
     slug: "bireysel-akademik-destek",

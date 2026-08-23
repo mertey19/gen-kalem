@@ -35,14 +35,17 @@ export const metadata: Metadata = {
     template: `%s | Genç Kalem`,
   },
   description:
-    "Mersin Akdeniz'de bulunan Genç Kalem Eğitim Kurumları'nın eğitim programları hakkında bilgi alın. Detaylı bilgi ve kayıt süreci için WhatsApp üzerinden iletişime geçin.",
+    "Mersin Akdeniz'de YKS (TYT–AYT), LGS ve okula destek programları. Genç Kalem Eğitim Kurumları'nın programları ve kayıt süreci için WhatsApp üzerinden bilgi alın.",
   keywords: [
     "Genç Kalem Eğitim Kurumları",
     "Mersin eğitim kurumu",
     "Akdeniz eğitim kurumu",
     "Mersin kurs merkezi",
-    "Mersin öğrenci eğitim merkezi",
     "Mersin sınav hazırlık",
+    "Mersin YKS kursu",
+    "Mersin LGS kursu",
+    "Mersin TYT AYT hazırlık",
+    "Mersin etüt merkezi",
   ],
   applicationName: business.name,
   alternates: {
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
     siteName: business.name,
     title: `${business.name} | ${business.city} ${business.district}`,
     description:
-      "Mersin Akdeniz'de öğrencilere planlı bir eğitim süreci ve düzenli takip sunan Genç Kalem Eğitim Kurumları. Programlarımız hakkında WhatsApp'tan bilgi alın.",
+      "Mersin Akdeniz'de YKS, LGS ve okula destek programları. Planlı eğitim süreci ve düzenli takip için Genç Kalem Eğitim Kurumları.",
   },
   twitter: {
     card: "summary_large_image",
