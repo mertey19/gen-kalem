@@ -131,15 +131,20 @@ export function Hero() {
             style={{ animationDelay: "100ms" }}
             className="animate-fade-in relative mx-auto w-full max-w-lg lg:max-w-none"
           >
-            <div className="relative overflow-hidden rounded-[1.75rem] border border-navy-100 shadow-lift">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-navy-100 bg-navy-50 shadow-lift">
               <Image
-                src="/images/hero-study.svg"
-                alt="Genç Kalem Eğitim Kurumları'nda planlı çalışmayı anlatan defter, kitap ve kalem kompozisyonu"
-                width={880}
-                height={900}
+                src="/images/hero-ogrenciler.jpg"
+                alt="Genç Kalem öğrencileri üniversite kampüsünde düzenlenen gezide"
+                fill
                 priority
                 sizes="(max-width: 1024px) 92vw, 46vw"
-                className="h-auto w-full object-cover"
+                className="object-cover object-[center_35%]"
+              />
+
+              {/* Alt kenarda yumuşak koyulaşma — yüzen kartlarla ayrışmayı sağlar */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy-950/45 to-transparent"
               />
 
               {/* Logo rozeti — kompozisyon içinde ölçülü bir marka vurgusu */}

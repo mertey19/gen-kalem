@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Genç Kalem">
+  <title>Genç Kalem</title>
+  <!--
+    Küçük boyut markası. Tam rozet 16-32 px'te okunmadığı için favicon ve
+    uygulama simgelerinde logonun çekirdeği (yeşil halka + lacivert gövde +
+    GK monogramı) kullanılır. Renkler ve monogram tam rozetle aynıdır.
+  -->
+  <circle cx="256" cy="256" r="256" fill="#6CB33F" />
+  <circle cx="256" cy="256" r="212" fill="#1F2A5F" />
+  <text
+    x="256"
+    y="330"
+    fill="#FFFFFF"
+    font-family="Georgia, 'Times New Roman', 'Nimbus Roman', serif"
+    font-size="228"
+    text-anchor="middle"
+    letter-spacing="-4"
+  >GK</text>
+</svg>

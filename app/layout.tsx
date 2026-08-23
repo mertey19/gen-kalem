@@ -76,15 +76,15 @@ export const metadata: Metadata = {
   },
   /**
    * Google arama sonuçlarında favicon gösterebilmek için ana sayfada
-   * taranabilir bir <link rel="icon"> gerekiyor. SVG'yi modern tarayıcılar
-   * için bırakıp, her yüzeyde çalışan ICO/PNG sürümlerini önceliklendiriyoruz.
+   * taranabilir bir <link rel="icon"> gerekiyor. Simgeler tam rozet yerine
+   * sade GK markasından üretilir; kavisli kurum adı 16-32 px'te okunmuyor.
    */
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48 32x32 16x16" },
       { url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" },
       { url: "/icons/icon-512.png", type: "image/png", sizes: "512x512" },
-      { url: business.logo.src, type: "image/svg+xml" },
+      { url: business.logo.mark, type: "image/svg+xml" },
     ],
     apple: [
       {

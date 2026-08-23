@@ -51,6 +51,13 @@ export const business = {
      * public/logo/genc-kalem-logo.svg dosyasından 1024x1024 üretilmiştir.
      */
     png: "/logo/genc-kalem-logo.png",
+    /**
+     * Küçük boyut markası: yeşil halka + lacivert gövde + GK monogramı.
+     * Tam rozetteki kavisli yazı 16-32 px'te okunmadığı için favicon ve
+     * uygulama simgeleri bundan üretilir. Kurum logosu (Organization
+     * yapısal verisi, paylaşım görselleri) yine tam rozeti kullanır.
+     */
+    mark: "/logo/genc-kalem-mark.svg",
     alt: "Genç Kalem Eğitim Kurumları logosu",
     /** Logo kare oranlıdır; bozulmaması için en/boy daima eşit verilir. */
     width: 512,

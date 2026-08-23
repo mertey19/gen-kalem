@@ -59,9 +59,9 @@ bölümü hiç render edilmez:
 export const galleryItems: GalleryItem[] = [];
 ```
 
-Hâlâ **geçici** olan görseller: `public/images/hero-study.svg` (hero
-illüstrasyonu) ve `public/images/blog/*.svg` (blog kapakları). İstenirse gerçek
-fotoğraflarla değiştirilebilirler.
+Hero de gerçek fotoğraf kullanıyor (`public/images/hero-ogrenciler.jpg`).
+Hâlâ **geçici** olan tek görsel grubu blog kapaklarıdır
+(`public/images/blog/*.svg`); istenirse gerçek fotoğraflarla değiştirilebilir.
 
 > Fotoğraflarda tanınabilir kişiler var; yayına almadan önce KVKK açısından
 > gerekli açık rızaların alınmış olduğundan emin olun.
@@ -97,13 +97,20 @@ Simgeler `public/logo/genc-kalem-logo.svg` dosyasından üretilmiştir:
 
 | Dosya | Kullanım |
 | --- | --- |
-| `public/favicon.ico` | 16–128 px çok boyutlu; tarayıcı sekmesi ve Google arama sonucu |
-| `public/icons/icon-192.png` · `icon-512.png` | PWA / Android, `manifest.webmanifest` |
-| `public/icons/apple-touch-icon.png` | iOS ana ekran (beyaz zeminli, saydamlık iOS'ta siyaha dönüyor) |
-| `public/logo/genc-kalem-logo.png` | 1024×1024; `Organization` yapısal verisindeki `logo` alanı |
+| `public/logo/genc-kalem-logo.svg` | Tam rozet — başlık, footer, hero rozeti |
+| `public/logo/genc-kalem-logo.png` | Tam rozet 1024×1024; `Organization` yapısal verisindeki `logo` |
+| `public/logo/genc-kalem-mark.svg` | Sade marka: yeşil halka + lacivert gövde + GK |
+| `public/favicon.ico` | Sade markadan; 16–128 px çok boyutlu |
+| `public/icons/icon-192.png` · `icon-512.png` | Sade marka; PWA / Android, `manifest.webmanifest` |
+| `public/icons/apple-touch-icon.png` | Sade marka, beyaz zeminli (iOS saydamlığı siyaha çeviriyor) |
 
-Logo değişirse SVG'yi güncelleyip bu raster sürümleri yeniden üretmek gerekir
-(1024 px'e render edip dairesel alfa maskesiyle kırpılmıştır).
+**Neden iki ayrı görsel?** Tam rozetteki kavisli "GENÇ KALEM / EĞİTİM
+KURUMLARI" yazısı 16–32 px'te okunmuyor. Bu yüzden simgeler logonun
+çekirdeğinden (aynı renkler, aynı GK monogramı) üretilir; kurum logosunun
+kendisi ise her yerde tam rozettir.
+
+Logo değişirse ilgili SVG'yi güncelleyip raster sürümleri yeniden üretmek
+gerekir (1024 px'e render edilip dairesel alfa maskesiyle kırpılıyorlar).
 
 Google'ın arama sonucunda favicon göstermesi için ana sayfada taranabilir bir
 `<link rel="icon">` bulunması yeterlidir; bu etiketler `app/layout.tsx`
