@@ -8,9 +8,8 @@ export const post: BlogPost = {
   category: "Motivasyon",
   date: "2026-08-10",
   updatedAt: "2026-08-10",
-  image: "/images/blog/motivasyon.svg",
-  imageAlt:
-    "Uzun bir hazırlık sürecinde adım adım ilerlemeyi anlatan yükselen çizgi ve fidan çizimi",
+  image: "/images/blog/motivasyon.jpg",
+  imageAlt: "Genç Kalem öğrencileri üniversite kampüsünde yürürken",
   body: [
     {
       type: "p",

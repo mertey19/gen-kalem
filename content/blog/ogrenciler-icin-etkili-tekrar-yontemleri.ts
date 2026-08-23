@@ -8,9 +8,8 @@ export const post: BlogPost = {
   category: "Öğrenci Rehberi",
   date: "2026-08-06",
   updatedAt: "2026-08-06",
-  image: "/images/blog/tekrar-yontemleri.svg",
-  imageAlt:
-    "Aralıklı tekrar döngüsünü anlatan kart, defter ve döngü oku çizimi",
+  image: "/images/blog/tekrar-yontemleri.jpg",
+  imageAlt: "Bir öğrenci sırasında kalemle not alırken yakın plan",
   body: [
     {
       type: "p",

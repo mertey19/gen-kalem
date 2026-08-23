@@ -8,9 +8,8 @@ export const post: BlogPost = {
   category: "Ders Çalışma",
   date: "2026-08-22",
   updatedAt: "2026-08-22",
-  image: "/images/blog/calisma-programi.svg",
-  imageAlt:
-    "Haftalık ders çalışma planının çizildiği defter ve planlama sayfası çizimi",
+  image: "/images/blog/calisma-programi.jpg",
+  imageAlt: "Genç Kalem sınıfında sıralarında çalışan öğrenciler",
   body: [
     {
       type: "p",

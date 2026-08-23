@@ -8,9 +8,8 @@ export const post: BlogPost = {
   category: "Veli Rehberi",
   date: "2026-08-02",
   updatedAt: "2026-08-02",
-  image: "/images/blog/veli-rehberi.svg",
-  imageAlt:
-    "Veli ve öğrenci arasındaki iletişimi anlatan konuşma balonları ve ev temalı çizim",
+  image: "/images/blog/veli-rehberi.jpg",
+  imageAlt: "Genç Kalem'de öğrenciler ve öğretmenler bir arada",
   body: [
     {
       type: "p",

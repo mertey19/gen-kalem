@@ -8,9 +8,8 @@ export const post: BlogPost = {
   category: "Sınav",
   date: "2026-08-14",
   updatedAt: "2026-08-14",
-  image: "/images/blog/deneme-analizi.svg",
-  imageAlt:
-    "Deneme sınavı sonuçlarının konu bazlı analiz edildiği grafik ve optik form çizimi",
+  image: "/images/blog/deneme-analizi.jpg",
+  imageAlt: "Sıranın üzerinde cevap kâğıdı ve kalemle sınav çalışması",
   body: [
     {
       type: "p",

@@ -59,9 +59,14 @@ bölümü hiç render edilmez:
 export const galleryItems: GalleryItem[] = [];
 ```
 
-Hero de gerçek fotoğraf kullanıyor (`public/images/hero-ogrenciler.jpg`).
-Hâlâ **geçici** olan tek görsel grubu blog kapaklarıdır
-(`public/images/blog/*.svg`); istenirse gerçek fotoğraflarla değiştirilebilir.
+Hero (`public/images/hero-ogrenciler.jpg`) ve blog kapakları
+(`public/images/blog/*.jpg`) da gerçek fotoğraflardır. Sitede artık geçici
+görsel yoktur; yalnızca logo, orijinal dosya gelene kadar yeniden çizimdir.
+
+Blog kapakları, elde bulunan kurum fotoğraflarından 16:9 kırpımlarla
+üretilmiştir. Konusuna daha uygun bir fotoğraf çekildiğinde dosyayı aynı adla
+değiştirmek ya da ilgili `content/blog/<slug>.ts` içindeki `image` satırını
+güncellemek yeterlidir.
 
 > Fotoğraflarda tanınabilir kişiler var; yayına almadan önce KVKK açısından
 > gerekli açık rızaların alınmış olduğundan emin olun.

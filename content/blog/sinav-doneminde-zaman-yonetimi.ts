@@ -8,9 +8,8 @@ export const post: BlogPost = {
   category: "Sınav",
   date: "2026-08-18",
   updatedAt: "2026-08-18",
-  image: "/images/blog/zaman-yonetimi.svg",
-  imageAlt:
-    "Sınav dönemi haftalık zaman planını gösteren saat ve takvim temalı çizim",
+  image: "/images/blog/zaman-yonetimi.jpg",
+  imageAlt: "Genç Kalem'de ders anlatımı sırasında sınıftaki öğrenciler",
   body: [
     {
       type: "p",
