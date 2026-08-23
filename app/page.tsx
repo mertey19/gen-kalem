@@ -10,10 +10,16 @@ import { Programs } from "@/components/sections/Programs";
 import { QuickContact } from "@/components/sections/QuickContact";
 import { SocialMedia } from "@/components/sections/SocialMedia";
 import { WhyUs } from "@/components/sections/WhyUs";
+import { faqItems } from "@/data/faq";
+import { faqPageJsonLd, jsonLdScript } from "@/lib/jsonld";
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScript(faqPageJsonLd(faqItems))}
+      />
       <Hero />
       <QuickContact />
       <WhyUs />
