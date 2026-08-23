@@ -9,7 +9,7 @@ export const post: BlogPost = {
   date: "2026-08-06",
   updatedAt: "2026-08-06",
   image: "/images/blog/tekrar-yontemleri.jpg",
-  imageAlt: "Sırasında çalışan bir öğrenci arkadan görünürken",
+  imageAlt: "Genç Kalem sınıfında dersi takip eden öğrenciler",
   body: [
     {
       type: "p",
