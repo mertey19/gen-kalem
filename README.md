@@ -72,7 +72,7 @@ Canonical URL, OpenGraph, `sitemap.xml` ve `robots.txt` bu değerden üretilir.
 Vercel'de ortam değişkeni olarak tanımlayın:
 
 ```
-NEXT_PUBLIC_SITE_URL=https://gercek-alan-adiniz.com
+NEXT_PUBLIC_SITE_URL=https://www.genckalem.com.tr
 ```
 
 Değişkeni **boş bırakmayın**; ya gerçek adresi yazın ya da hiç tanımlamayın.
@@ -81,7 +81,17 @@ alan adına, önizleme adresine, en son da dosyadaki varsayılana düşer.
 Protokolsüz yazılan değerlerin (`gen-kalem.vercel.app`) başına `https://`
 eklenir, sondaki `/` temizlenir.
 
-### 4. WhatsApp numarasını doğrulayın
+### 4. Google Search Console doğrulaması
+
+`public/googlef1d5a46ab1e079ef.html` dosyası Google'ın verdiği doğrulama
+dosyasıdır ve `https://www.genckalem.com.tr/googlef1d5a46ab1e079ef.html`
+adresinden yayınlanır. **Doğrulama başarılı olduktan sonra bile silmeyin;**
+Google periyodik olarak yeniden kontrol eder ve dosya yoksa doğrulama düşer.
+
+Search Console'da site doğrulandıktan sonra `sitemap.xml` adresini de
+göndermeniz önerilir.
+
+### 5. WhatsApp numarasını doğrulayın
 
 `data/business.ts` içinde WhatsApp hattı olarak kurumun **ilk** numarası
 tanımlıdır (`0507 712 40 04`). WhatsApp başka bir hatta bağlıysa yalnızca

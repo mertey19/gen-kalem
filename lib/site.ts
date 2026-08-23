@@ -14,7 +14,7 @@
  * robots, JSON-LD); bu yüzden NEXT_PUBLIC_ öneki olmayan Vercel değişkenleri
  * de güvenle okunabilir.
  */
-const FALLBACK_SITE_URL = "https://genckalemegitim.com";
+const FALLBACK_SITE_URL = "https://www.genckalem.com.tr";
 
 function normalizeOrigin(value: string | undefined | null): string | null {
   if (!value) return null;
