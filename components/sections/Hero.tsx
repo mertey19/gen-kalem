@@ -2,6 +2,7 @@ import {
   ArrowRight,
   CalendarCheck,
   MapPin,
+  MessagesSquare,
   Target,
   UserCheck,
 } from "lucide-react";
@@ -11,6 +12,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { business } from "@/data/business";
+import { programs } from "@/data/programs";
 
 /**
  * Hero bilinçli olarak sunucu bileşenidir ve giriş animasyonu CSS ile yapılır.
@@ -20,10 +22,14 @@ import { business } from "@/data/business";
  */
 
 const trustItems = [
-  { icon: UserCheck, label: "Öğrenci odaklı yaklaşım" },
-  { icon: CalendarCheck, label: "Planlı eğitim süreci" },
-  { icon: MapPin, label: "Merkezi Mersin konumu" },
+  { icon: UserCheck, label: "Bireysel öğrenci takibi" },
+  { icon: CalendarCheck, label: "Planlı çalışma programı" },
+  { icon: MessagesSquare, label: "Düzenli veli bilgilendirmesi" },
+  { icon: MapPin, label: "Akdeniz / Mersin merkez" },
 ];
+
+/** Hero'daki hızlı program girişleri; ayrıntı sayfası olanlar öne alınır. */
+const heroPrograms = programs.filter((program) => program.href).slice(0, 4);
 
 const floatingCards = [
   { icon: CalendarCheck, title: "Planlı Çalışma", detail: "Haftalık program" },
@@ -67,7 +73,7 @@ export function Hero() {
               style={{ animationDelay: "60ms" }}
               className="animate-fade-up mt-6 text-[2.35rem] leading-[1.08] font-extrabold tracking-tight text-navy-900 sm:text-5xl lg:text-[3.6rem] xl:text-[4rem]"
             >
-              Başarıya giden yolda{" "}
+              Mersin&apos;de başarıya giden yolda{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">yanınızdayız.</span>
                 <span
@@ -81,23 +87,27 @@ export function Hero() {
               style={{ animationDelay: "120ms" }}
               className="animate-fade-up mt-6 max-w-xl text-base leading-relaxed text-navy-700/75 sm:text-lg"
             >
-              Genç Kalem Eğitim Kurumları olarak öğrencilerimize düzenli bir
-              çalışma ortamı, hedeflerine uygun bir program ve süreç boyunca
-              kesintisiz takip sunuyoruz. Amacımız, öğrencinin bulunduğu
-              noktadan bir adım ileri gitmesini kalıcı bir alışkanlığa
-              dönüştürmek.
+              Akdeniz&apos;deki kurumumuzda <strong className="font-semibold text-navy-900">YKS (TYT–AYT)</strong>,{" "}
+              <strong className="font-semibold text-navy-900">LGS</strong> ve okula destek
+              programları yürütüyoruz. Her öğrenciye kendi seviyesine göre bir
+              çalışma planı kurar, gelişimini düzenli olarak takip eder ve
+              süreci veliyle birlikte yürütürüz.
             </p>
 
             <div
               style={{ animationDelay: "180ms" }}
               className="animate-fade-up mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <WhatsAppButton size="lg" className="w-full sm:w-auto" />
+              <WhatsAppButton
+                size="lg"
+                className="w-full sm:w-auto"
+                source="hero"
+              />
               <Link
                 href="/#egitimlerimiz"
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-xl border border-navy-700/15 bg-white px-6 py-3.5 text-base font-semibold text-navy-800 transition-all duration-200 hover:border-navy-700/35 hover:shadow-card sm:w-auto"
               >
-                Eğitimlerimizi İncele
+                Eğitimleri İncele
                 <ArrowRight
                   size={18}
                   aria-hidden="true"
@@ -106,9 +116,30 @@ export function Hero() {
               </Link>
             </div>
 
+            {/* Program hızlı girişleri — ziyaretçi ilk ekranda doğru sayfaya gidebilsin */}
+            <nav
+              aria-label="Programlara hızlı erişim"
+              style={{ animationDelay: "210ms" }}
+              className="animate-fade-up mt-7"
+            >
+              <ul className="flex flex-wrap gap-2">
+                {heroPrograms.map((program) => (
+                  <li key={program.slug}>
+                    <Link
+                      href={program.href!}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-navy-100 bg-white px-3.5 py-1.5 text-[0.82rem] font-semibold text-navy-800 transition-colors hover:border-leaf-500 hover:text-leaf-700"
+                    >
+                      {program.title.replace(" Hazırlık", "").replace(" Programları", "")}
+                      <ArrowRight size={13} aria-hidden="true" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
             <ul
-              style={{ animationDelay: "240ms" }}
-              className="animate-fade-up mt-8 flex flex-wrap gap-x-6 gap-y-3"
+              style={{ animationDelay: "260ms" }}
+              className="animate-fade-up mt-7 flex flex-wrap gap-x-6 gap-y-3"
             >
               {trustItems.map(({ icon: Icon, label }) => (
                 <li

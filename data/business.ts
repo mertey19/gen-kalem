@@ -37,6 +37,12 @@ export const business = {
   /** Bilinmiyor; boş kaldığı sürece arayüzde hiç render edilmez. */
   email: "",
 
+  /**
+   * Tanışma görüşmesinin ücretsiz olduğu KURUM TARAFINDAN doğrulanırsa true yapın.
+   * false olduğu sürece hiçbir yerde "ücretsiz" ifadesi gösterilmez.
+   */
+  freeIntroMeeting: false,
+
   social: {
     instagram: "https://www.instagram.com/genckalemkurs/",
     facebook: "https://www.facebook.com/genckalemkurs33/",

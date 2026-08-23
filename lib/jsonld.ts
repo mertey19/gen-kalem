@@ -87,25 +87,14 @@ export function blogPostingJsonLd(post: ArticleInput) {
   };
 }
 
-/**
- * SSS bölümü için FAQPage. Google zengin sonuç olarak gösterebiliyor.
- * Soru/cevaplar data/faq.ts içindeki tek kaynaktan gelir; sayfadaki
- * görünür içerikle birebir aynıdır (Google bunu şart koşuyor).
+/*
+ * NOT: FAQPage yapısal verisi bilinçli olarak KULLANILMIYOR.
+ * Google, FAQ zengin sonuçlarını önce (Eylül 2023) yalnızca resmi kurum ve
+ * sağlık sitelerine daralttı, ardından (Haziran 2026) özelliği tamamen
+ * kaldırıp dokümanını yayından çekti. Bu nedenle işaretleme hiçbir arama
+ * görünümü üretmiyor; yalnızca sayfa ağırlığı ekliyordu.
+ * SSS içeriği erişilebilir akordeon olarak sayfada duruyor.
  */
-export function faqPageJsonLd(items: { question: string; answer: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-}
 
 export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
   return {

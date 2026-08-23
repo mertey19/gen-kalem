@@ -1,36 +1,113 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { X, ZoomIn } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { galleryItems } from "@/data/gallery";
 
+const SWIPE_THRESHOLD = 48;
+
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
   const reduce = useReducedMotion();
 
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  /** Lightbox kapanınca odağın geri döneceği tetikleyici. */
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const touchStartX = useRef<number | null>(null);
+
+  const count = galleryItems.length;
+
   const close = useCallback(() => setActive(null), []);
+  const showPrev = useCallback(
+    () => setActive((i) => (i === null ? null : (i - 1 + count) % count)),
+    [count],
+  );
+  const showNext = useCallback(
+    () => setActive((i) => (i === null ? null : (i + 1) % count)),
+    [count],
+  );
 
+  const openAt = (
+    index: number,
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
+    triggerRef.current = event.currentTarget;
+    setActive(index);
+  };
+
+  const isOpen = active !== null;
+
+  /**
+   * Kaydırma kilidi ve odak yönetimi YALNIZCA açılış/kapanışta çalışmalı.
+   * Bu efekt `active` değerine bağlansaydı her ok tuşunda yeniden çalışır,
+   * "önceki overflow" değeri olarak "hidden" kaydedilir ve lightbox
+   * kapandığında sayfa kaydırması kilitli kalırdı.
+   */
   useEffect(() => {
-    if (active === null) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") close();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = previous;
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [active, close]);
+    if (!isOpen) return;
 
-  if (galleryItems.length === 0) return null;
+    const previousOverflow = document.body.style.overflow;
+    const trigger = triggerRef.current;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      trigger?.focus();
+    };
+  }, [isOpen]);
+
+  /** Klavye: Esc kapatır, oklar gezinir, Tab odağı diyalog içinde tutar. */
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showPrev();
+        return;
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showNext();
+        return;
+      }
+      if (event.key !== "Tab") return;
+
+      const focusables = dialogRef.current?.querySelectorAll<HTMLElement>(
+        "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])",
+      );
+      if (!focusables || focusables.length === 0) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen, close, showPrev, showNext]);
+
+  if (count === 0) return null;
 
   const activeItem = active === null ? null : galleryItems[active];
 
@@ -59,8 +136,9 @@ export function Gallery() {
             >
               <button
                 type="button"
-                onClick={() => setActive(index)}
-                aria-label={`${item.alt} — büyüt`}
+                onClick={(event) => openAt(index, event)}
+                aria-haspopup="dialog"
+                aria-label={`${item.caption} — görseli büyüt`}
                 className="group relative h-full w-full overflow-hidden rounded-2xl border border-navy-100 bg-white"
               >
                 <Image
@@ -74,10 +152,6 @@ export function Gallery() {
                       : "(max-width: 640px) 50vw, (max-width: 1024px) 45vw, 33vw"
                   }
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                />
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-navy-900/0 transition-colors duration-300 group-hover:bg-navy-900/25"
                 />
                 <span
                   aria-hidden="true"
@@ -98,11 +172,8 @@ export function Gallery() {
       </Container>
 
       <AnimatePresence>
-        {activeItem ? (
+        {activeItem && active !== null ? (
           <motion.div
-            role="dialog"
-            aria-modal="true"
-            aria-label={activeItem.alt}
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={reduce ? undefined : { opacity: 0 }}
@@ -110,35 +181,81 @@ export function Gallery() {
             className="fixed inset-0 z-[60] flex items-center justify-center bg-navy-950/85 p-4 backdrop-blur-sm"
             onClick={close}
           >
-            <button
-              type="button"
-              onClick={close}
-              aria-label="Görseli kapat"
-              className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-white ring-1 ring-inset ring-white/20 transition-colors hover:bg-white/20"
-            >
-              <X size={20} />
-            </button>
-
-            <motion.div
-              initial={reduce ? false : { scale: 0.96, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={reduce ? undefined : { scale: 0.96, opacity: 0 }}
-              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-              className="relative max-h-[85vh] w-full max-w-3xl overflow-hidden rounded-2xl bg-white"
+            <div
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label={`${activeItem.caption} — ${active + 1} / ${count}`}
+              className="relative flex w-full max-w-3xl flex-col"
               onClick={(event) => event.stopPropagation()}
+              onTouchStart={(event) => {
+                touchStartX.current = event.touches[0].clientX;
+              }}
+              onTouchEnd={(event) => {
+                if (touchStartX.current === null) return;
+                const delta =
+                  event.changedTouches[0].clientX - touchStartX.current;
+                if (delta > SWIPE_THRESHOLD) showPrev();
+                else if (delta < -SWIPE_THRESHOLD) showNext();
+                touchStartX.current = null;
+              }}
             >
-              <Image
-                src={activeItem.src}
-                alt={activeItem.alt}
-                width={activeItem.width}
-                height={activeItem.height}
-                sizes="(max-width: 768px) 92vw, 768px"
-                className="h-auto w-full"
-              />
-              <p className="border-t border-navy-100 px-5 py-3.5 text-sm font-medium text-navy-800">
-                {activeItem.caption}
-              </p>
-            </motion.div>
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <p className="text-sm font-medium text-white/90">
+                  {active + 1} / {count}
+                </p>
+                <button
+                  ref={closeButtonRef}
+                  type="button"
+                  onClick={close}
+                  aria-label="Görseli kapat"
+                  className="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-white ring-1 ring-inset ring-white/20 transition-colors hover:bg-white/20"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              <motion.div
+                key={activeItem.src}
+                initial={reduce ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.18 }}
+                className="overflow-hidden rounded-2xl bg-white"
+              >
+                <Image
+                  src={activeItem.src}
+                  alt={activeItem.alt}
+                  width={activeItem.width}
+                  height={activeItem.height}
+                  sizes="(max-width: 768px) 92vw, 768px"
+                  className="h-auto max-h-[68vh] w-full object-contain"
+                />
+                <p className="border-t border-navy-100 px-5 py-3.5 text-sm font-medium text-navy-800">
+                  {activeItem.caption}
+                </p>
+              </motion.div>
+
+              <div className="mt-3 flex items-center justify-between gap-3">
+                <button
+                  type="button"
+                  onClick={showPrev}
+                  aria-label="Önceki görsel"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 px-4 py-2.5 text-sm font-semibold text-white ring-1 ring-inset ring-white/20 transition-colors hover:bg-white/20"
+                >
+                  <ChevronLeft size={18} aria-hidden="true" />
+                  Önceki
+                </button>
+                <button
+                  type="button"
+                  onClick={showNext}
+                  aria-label="Sonraki görsel"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 px-4 py-2.5 text-sm font-semibold text-white ring-1 ring-inset ring-white/20 transition-colors hover:bg-white/20"
+                >
+                  Sonraki
+                  <ChevronRight size={18} aria-hidden="true" />
+                </button>
+              </div>
+            </div>
           </motion.div>
         ) : null}
       </AnimatePresence>

@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import { Prose } from "@/components/blog/Prose";
+import { TableOfContents } from "@/components/blog/TableOfContents";
 import { BlogCard } from "@/components/ui/BlogCard";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -13,8 +14,8 @@ import {
   estimateReadingTime,
   formatDate,
   getPostBySlug,
+  getPublishedPosts,
   getRelatedPosts,
-  posts,
   toSummary,
 } from "@/data/blog";
 import {
@@ -25,8 +26,11 @@ import {
 
 type PageProps = { params: Promise<{ slug: string }> };
 
+/** Zamanlanmış yazılar tarihi geldiğinde otomatik yayına girsin diye. */
+export const revalidate = 3600;
+
 export function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }));
+  return getPublishedPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
@@ -36,7 +40,8 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
 
   if (!post) {
-    return { title: "Yazı bulunamadı" };
+    // Henüz yayınlanmamış ya da var olmayan yazı; dizine eklenmesin.
+    return { title: "Yazı bulunamadı", robots: { index: false, follow: false } };
   }
 
   const url = `/blog/${post.slug}`;
@@ -160,6 +165,8 @@ export default async function BlogPostPage({ params }: PageProps) {
                 className="h-auto w-full"
               />
             </div>
+
+            <TableOfContents blocks={post.body} />
 
             <Prose blocks={post.body} />
 

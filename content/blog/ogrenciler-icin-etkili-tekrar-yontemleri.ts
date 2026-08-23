@@ -174,7 +174,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Kendi tekrar düzeninizi oluştururken destek almak isterseniz, [eğitim programlarımız](/#egitimlerimiz) hakkında bilgi alabilir veya [bize ulaşabilirsiniz](/#iletisim).",
+      text: "Kendi tekrar düzeninizi oluştururken destek almak isterseniz [etüt ve soru çözüm çalışmalarımıza](/mersin-etut-merkezi) göz atabilir veya [bize ulaşabilirsiniz](/#iletisim).",
     },
   ],
 };

@@ -6,8 +6,8 @@ export const post: BlogPost = {
   description:
     "8. sınıf öğrencileri ve velileri için LGS hazırlık rehberi: çalışma düzeni, deneme takibi, okul dersleriyle denge ve sınav kaygısını yönetme.",
   category: "Veli Rehberi",
-  date: "2026-08-24",
-  updatedAt: "2026-08-24",
+  date: "2026-08-23",
+  updatedAt: "2026-08-23",
   image: "/images/blog/lgs-hazirlik.jpg",
   imageAlt: "Genç Kalem öğrencileri düzenlenen bir gezide topluca",
   body: [
@@ -155,7 +155,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Genç Kalem Eğitim Kurumları'nda LGS hazırlık çalışmaları öğrencinin mevcut seviyesine göre planlanır ve süreç boyunca düzenli olarak takip edilir. Ayrıntılı bilgi için [eğitim programlarımızı](/#egitimlerimiz) inceleyebilir veya [bize ulaşabilirsiniz](/#iletisim).",
+      text: "Genç Kalem Eğitim Kurumları'nda LGS hazırlık çalışmaları öğrencinin mevcut seviyesine göre planlanır ve süreç boyunca düzenli olarak takip edilir. Ayrıntılar için [Mersin LGS hazırlık programımıza](/lgs-kursu-mersin) göz atabilir veya [bize ulaşabilirsiniz](/#iletisim).",
     },
   ],
 };

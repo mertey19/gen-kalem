@@ -12,6 +12,15 @@ export const navItems: NavItem[] = [
 ];
 
 /**
+ * Masaüstü menüsü. "Ana Sayfa" bilinçli olarak yok: logo zaten ana sayfaya
+ * gidiyor ve kalıcı Ön Kayıt butonuna yer açmak gerekiyor. Mobil menüde ve
+ * alt menüde madde korunur.
+ */
+export const desktopNavItems: NavItem[] = navItems.filter(
+  (item) => item.href !== "/#anasayfa",
+);
+
+/**
  * Başlıktaki üst yardımcı çubukta ve mobil menüde görünen ikincil eylemler.
  * WhatsApp birincil dönüşüm olmaya devam ettiği için bunlar görsel olarak
  * daha sakin tutulur.

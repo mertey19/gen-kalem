@@ -9,9 +9,10 @@ import { useEffect, useState } from "react";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/BrandIcons";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
+import { TrackedLink } from "@/components/ui/Tracked";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { business, socialLinks } from "@/data/business";
-import { navItems, utilityLinks } from "@/data/navigation";
+import { desktopNavItems, navItems, utilityLinks } from "@/data/navigation";
 
 const socialIconMap = {
   instagram: InstagramIcon,
@@ -160,7 +161,7 @@ export function Header() {
               aria-label="Ana menü"
               className="hidden items-center xl:flex"
             >
-              {navItems.map((item) => {
+              {desktopNavItems.map((item) => {
                 const active = isActive(item.href);
                 return (
                   <Link
@@ -188,8 +189,24 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-2">
+              {/* Ön Kayıt: kaydırıldığında da görünür kalan ikincil dönüşüm */}
+              <TrackedLink
+                href="/on-kayit"
+                event="program_cta_click"
+                source="navbar_on_kayit"
+                className="hidden items-center gap-1.5 rounded-xl border border-navy-700/20 px-3.5 py-2 text-sm font-semibold text-navy-800 transition-colors hover:border-navy-700/45 hover:bg-navy-50 md:inline-flex"
+              >
+                <ClipboardList size={16} aria-hidden="true" />
+                Ön Kayıt
+              </TrackedLink>
+
               <span className="hidden sm:block">
-                <WhatsAppButton size="sm" label="WhatsApp'tan Bilgi Al" />
+                <WhatsAppButton
+                  size="sm"
+                  label="WhatsApp'tan Bilgi Al"
+                  source="navbar"
+                  event="navbar_whatsapp_click"
+                />
               </span>
 
               <button
@@ -270,6 +287,8 @@ export function Header() {
                       size="lg"
                       className="w-full"
                       label="WhatsApp'tan Bilgi Al"
+                      source="mobile_menu"
+                      event="navbar_whatsapp_click"
                     />
                   </div>
 

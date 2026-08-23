@@ -158,7 +158,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Genç Kalem Eğitim Kurumları'nda etüt ve soru çözüm çalışmaları, öğrencinin takıldığı konuyu biriktirmeden sorabilmesi üzerine kuruludur. Güncel etüt saatleri ve programlar için [bizimle iletişime geçebilirsiniz](/#iletisim).",
+      text: "Genç Kalem Eğitim Kurumları'nda etüt ve soru çözüm çalışmaları, öğrencinin takıldığı konuyu biriktirmeden sorabilmesi üzerine kuruludur. Ayrıntılar için [Mersin etüt ve soru çözüm sayfamıza](/mersin-etut-merkezi) bakabilir ya da [bizimle iletişime geçebilirsiniz](/#iletisim).",
     },
   ],
 };

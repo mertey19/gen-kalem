@@ -159,7 +159,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Sınav dönemi boyunca planınızı birlikte düzenlemek ve eksiklerinizi düzenli takip etmek isterseniz, [eğitim programlarımız](/#egitimlerimiz) hakkında bilgi alabilirsiniz.",
+      text: "Sınav dönemi boyunca planınızı birlikte düzenlemek isterseniz [YKS](/yks-kursu-mersin) ve [LGS](/lgs-kursu-mersin) hazırlık sayfalarımızı inceleyebilirsiniz.",
     },
   ],
 };

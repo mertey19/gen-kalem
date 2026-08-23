@@ -158,7 +158,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Kendi programınızı oluştururken yönlendirmeye ihtiyaç duyarsanız, [eğitim programlarımız](/#egitimlerimiz) hakkında bilgi alabilir veya doğrudan [bize ulaşabilirsiniz](/#iletisim).",
+      text: "Kendi programınızı oluştururken yönlendirmeye ihtiyaç duyarsanız [bireysel akademik destek](/bireysel-ders-mersin) sayfamıza göz atabilir veya doğrudan [bize ulaşabilirsiniz](/#iletisim).",
     },
   ],
 };

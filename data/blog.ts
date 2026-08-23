@@ -60,28 +60,66 @@ export function estimateReadingTime(post: BlogPost): number {
   return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 }
 
-/** Yayın tarihine göre yeniden eskiye sıralı yazı listesi. */
-export const posts: BlogPost[] = [...rawPosts].sort((a, b) =>
+/**
+ * Tarihe göre yeniden eskiye sıralı TÜM yazılar — yayınlanmamışlar dahil.
+ * Doğrudan kullanmayın; herkese açık listeler için getPublishedPosts() kullanın.
+ */
+const allPosts: BlogPost[] = [...rawPosts].sort((a, b) =>
   b.date.localeCompare(a.date),
 );
 
-export const getAllPosts = (): BlogPost[] => posts;
+/**
+ * Kurumun bulunduğu saat diliminde "bugün"ün YYYY-MM-DD karşılığı.
+ * ISO tarihler sözlüksel olarak da doğru sıralandığı için string karşılaştırma yeterli;
+ * böylece saat dilimi ve yaz saati kaynaklı kaymalar oluşmaz.
+ */
+const PUBLICATION_TIME_ZONE = "Europe/Istanbul";
+
+export function todayInTimeZone(now: Date = new Date()): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: PUBLICATION_TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(now);
+}
+
+/** İleri tarihli yazılar, tarihi gelene kadar herkese açık listelerde görünmez. */
+export function isPublished(post: BlogPost, today = todayInTimeZone()): boolean {
+  return post.date <= today;
+}
+
+/**
+ * Yayınlanmış yazılar. "Bugün" modül yüklenirken değil, her çağrıda hesaplanır;
+ * böylece uzun ömürlü bir sunucu süreci tarihi donduramaz.
+ * Sayfaların da güncellenmesi için blog rotalarında `revalidate` tanımlıdır.
+ */
+export function getPublishedPosts(): BlogPost[] {
+  const today = todayInTimeZone();
+  return allPosts.filter((post) => isPublished(post, today));
+}
+
+/** Yalnızca derleme/denetim amaçlı: yayınlanmamışlar dahil her şey. */
+export const getAllPostsIncludingScheduled = (): BlogPost[] => allPosts;
+
+export const getAllPosts = (): BlogPost[] => getPublishedPosts();
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
-  posts.find((post) => post.slug === slug);
+  getPublishedPosts().find((post) => post.slug === slug);
 
-export const getLatestPosts = (count = 3): BlogPost[] => posts.slice(0, count);
+export const getLatestPosts = (count = 3): BlogPost[] =>
+  getPublishedPosts().slice(0, count);
 
-/** Yalnızca yazısı bulunan kategoriler döner; boş filtre butonu oluşmaz. */
+/** Yalnızca yayınlanmış yazısı bulunan kategoriler döner; boş filtre butonu oluşmaz. */
 export const getCategories = (): BlogCategory[] =>
-  Array.from(new Set(posts.map((post) => post.category)));
+  Array.from(new Set(getPublishedPosts().map((post) => post.category)));
 
 /** Önce aynı kategoriden, yetmezse en yeni yazılardan tamamlar. Kendisini asla döndürmez. */
 export function getRelatedPosts(slug: string, count = 3): BlogPost[] {
   const current = getPostBySlug(slug);
   if (!current) return getLatestPosts(count);
 
-  const others = posts.filter((post) => post.slug !== slug);
+  const others = getPublishedPosts().filter((post) => post.slug !== slug);
   const sameCategory = others.filter(
     (post) => post.category === current.category,
   );
@@ -113,7 +151,8 @@ export const toSummary = (post: BlogPost): PostSummary => ({
   readingTime: estimateReadingTime(post),
 });
 
-export const getAllSummaries = (): PostSummary[] => posts.map(toSummary);
+export const getAllSummaries = (): PostSummary[] =>
+  getPublishedPosts().map(toSummary);
 
 export const formatDate = (iso: string): string =>
   new Date(`${iso}T00:00:00Z`).toLocaleDateString("tr-TR", {

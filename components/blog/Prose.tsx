@@ -2,6 +2,7 @@ import { Sparkles } from "lucide-react";
 
 import type { BlogBlock } from "@/content/types";
 import { renderInline } from "@/lib/inline";
+import { slugifyTr } from "@/lib/slug";
 
 /** Yazı gövdesi. Ölçü tipografisi 760px genişlikte tutulur. */
 export function Prose({ blocks }: { blocks: BlogBlock[] }) {
@@ -13,7 +14,8 @@ export function Prose({ blocks }: { blocks: BlogBlock[] }) {
             return (
               <h2
                 key={index}
-                className="pt-4 font-display text-[1.6rem] font-bold leading-snug text-navy-900 sm:text-[1.75rem]"
+                id={slugifyTr(block.text)}
+                className="scroll-mt-28 pt-4 font-display text-[1.6rem] font-bold leading-snug text-navy-900 sm:text-[1.75rem]"
               >
                 {block.text}
               </h2>

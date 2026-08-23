@@ -1,6 +1,8 @@
 import {
+  ArrowRight,
   BookOpen,
   Compass,
+  GraduationCap,
   PenLine,
   Target,
   UserCheck,
@@ -8,11 +10,13 @@ import {
 } from "lucide-react";
 
 import { WhatsAppIcon } from "@/components/ui/BrandIcons";
+import { TrackedExternalLink, TrackedLink } from "@/components/ui/Tracked";
 import type { Program, ProgramIcon } from "@/data/programs";
 import { createWhatsAppUrl, whatsAppMessageFor } from "@/lib/whatsapp";
 
 const iconMap: Record<ProgramIcon, typeof Target> = {
   target: Target,
+  graduationCap: GraduationCap,
   bookOpen: BookOpen,
   userCheck: UserCheck,
   penLine: PenLine,
@@ -20,14 +24,26 @@ const iconMap: Record<ProgramIcon, typeof Target> = {
   users: Users,
 };
 
-export function ProgramCard({ program }: { program: Program }) {
+export function ProgramCard({
+  program,
+  source = "programs_section",
+}: {
+  program: Program;
+  source?: string;
+}) {
   const Icon = iconMap[program.icon];
+  const detailHref = program.href;
 
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-leaf-300 hover:shadow-lift">
-      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-leaf-50 text-leaf-700 transition-colors duration-200 group-hover:bg-leaf-600 group-hover:text-white">
-        <Icon size={22} aria-hidden="true" />
-      </span>
+    <article className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-leaf-300 hover:shadow-lift">
+      <div className="flex items-start justify-between gap-3">
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-leaf-50 text-leaf-700 transition-colors duration-200 group-hover:bg-leaf-600 group-hover:text-white">
+          <Icon size={22} aria-hidden="true" />
+        </span>
+        <span className="rounded-lg bg-navy-50 px-2.5 py-1 text-right text-[0.7rem] font-semibold leading-tight text-navy-700">
+          {program.audience}
+        </span>
+      </div>
 
       <h3 className="mt-5 font-display text-lg font-bold text-navy-900">
         {program.title}
@@ -48,16 +64,40 @@ export function ProgramCard({ program }: { program: Program }) {
         ))}
       </ul>
 
-      <a
-        href={createWhatsAppUrl(whatsAppMessageFor(program.title))}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${program.title} hakkında WhatsApp'tan bilgi al — yeni sekmede açılır`}
-        className="mt-auto inline-flex items-center gap-2 self-start rounded-xl border border-navy-100 px-4 py-2.5 text-sm font-semibold text-navy-800 transition-all duration-200 group-hover:border-leaf-500 group-hover:bg-leaf-600 group-hover:text-white"
-      >
-        <WhatsAppIcon size={16} />
-        Bilgi Al
-      </a>
+      <div className="mt-auto flex flex-wrap items-center gap-2">
+        {detailHref ? (
+          <TrackedLink
+            href={detailHref}
+            event="program_cta_click"
+            source={source}
+            item={program.slug}
+            className="inline-flex items-center gap-1.5 rounded-xl bg-navy-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy-600"
+          >
+            Programı İncele
+            <ArrowRight
+              size={15}
+              aria-hidden="true"
+              className="transition-transform duration-200 group-hover:translate-x-0.5"
+            />
+          </TrackedLink>
+        ) : null}
+
+        <TrackedExternalLink
+          href={createWhatsAppUrl(whatsAppMessageFor(program.title))}
+          event="whatsapp_click"
+          source={`program_card_${source}`}
+          item={program.slug}
+          ariaLabel={`${program.title} hakkında WhatsApp'tan bilgi al — yeni sekmede açılır`}
+          className={`inline-flex items-center gap-2 rounded-xl border border-navy-100 px-4 py-2.5 text-sm font-semibold transition-colors ${
+            detailHref
+              ? "text-navy-800 hover:border-leaf-500 hover:text-leaf-700"
+              : "text-navy-800 group-hover:border-leaf-500 group-hover:bg-leaf-600 group-hover:text-white"
+          }`}
+        >
+          <WhatsAppIcon size={16} />
+          Bilgi Al
+        </TrackedExternalLink>
+      </div>
     </article>
   );
 }

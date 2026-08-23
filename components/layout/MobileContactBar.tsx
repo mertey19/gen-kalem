@@ -5,6 +5,7 @@ import { Navigation, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { WhatsAppIcon } from "@/components/ui/BrandIcons";
+import { trackEvent } from "@/lib/analytics";
 import { business, maps } from "@/data/business";
 import { createWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -37,6 +38,7 @@ export function MobileContactBar() {
           <div className="flex items-center gap-2 px-3 py-2.5">
             <a
               href={business.phones[0].href}
+              onClick={() => trackEvent("phone_click", { source: "sticky_bar" })}
               aria-label={`Telefonla arayın: ${business.phones[0].label}`}
               className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-navy-100 bg-white text-navy-800"
             >
@@ -47,6 +49,9 @@ export function MobileContactBar() {
               href={maps.directions}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("directions_click", { source: "sticky_bar" })
+              }
               aria-label="Yol tarifi al — Google Haritalar yeni sekmede açılır"
               className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-navy-100 bg-white text-navy-800"
             >
@@ -57,6 +62,9 @@ export function MobileContactBar() {
               href={createWhatsAppUrl(business.whatsappDefaultMessage)}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("sticky_whatsapp_click", { source: "sticky_bar" })
+              }
               aria-label="WhatsApp'tan bilgi al — yeni sekmede açılır"
               className="inline-flex h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-leaf-600 px-3 text-[0.95rem] font-semibold text-white"
             >

@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   },
 };
 
+/** Zamanlanmış yazılar tarihi geldiğinde listeye otomatik düşsün diye. */
+export const revalidate = 3600;
+
 export default function BlogIndexPage() {
   const summaries = getAllSummaries();
   const categories = getCategories();
@@ -95,10 +98,14 @@ export default function BlogIndexPage() {
 
       {/* Yazı listesi */}
       <section
-        aria-label="Blog yazıları"
+        aria-labelledby="tum-yazilar-baslik"
         className="bg-mist py-14 sm:py-16"
       >
         <Container>
+          {/* Başlık hiyerarşisini bozmamak için görsel olarak gizli h2 */}
+          <h2 id="tum-yazilar-baslik" className="sr-only">
+            Tüm blog yazıları
+          </h2>
           <BlogList
             posts={summaries}
             categories={categories}

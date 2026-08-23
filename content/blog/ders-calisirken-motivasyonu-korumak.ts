@@ -152,7 +152,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Çalışma düzeninizi oturtmak ve süreci düzenli takip edilen bir yapı içinde yürütmek isterseniz, [eğitim programlarımız](/#egitimlerimiz) hakkında bilgi alabilirsiniz.",
+      text: "Çalışma düzeninizi oturtmak ve süreci düzenli takip edilen bir yapı içinde yürütmek isterseniz [bireysel akademik destek](/bireysel-ders-mersin) sayfamıza göz atabilirsiniz.",
     },
   ],
 };

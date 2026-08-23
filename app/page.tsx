@@ -9,23 +9,22 @@ import { Process } from "@/components/sections/Process";
 import { Programs } from "@/components/sections/Programs";
 import { QuickContact } from "@/components/sections/QuickContact";
 import { SocialMedia } from "@/components/sections/SocialMedia";
+import { TrustSignals } from "@/components/sections/TrustSignals";
 import { WhyUs } from "@/components/sections/WhyUs";
-import { faqItems } from "@/data/faq";
-import { faqPageJsonLd, jsonLdScript } from "@/lib/jsonld";
+
+/** Zamanlanmış yazılar tarihi geldiğinde listeye otomatik düşsün diye. */
+export const revalidate = 3600;
 
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={jsonLdScript(faqPageJsonLd(faqItems))}
-      />
       <Hero />
       <QuickContact />
       <WhyUs />
       <Programs />
       <Process />
       <About />
+      <TrustSignals />
       <Gallery />
       <BlogPreview />
       <SocialMedia />

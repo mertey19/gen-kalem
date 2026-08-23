@@ -19,6 +19,26 @@ export const faqItems: FaqItem[] = [
       "Genç Kalem Eğitim Kurumları'nda YKS (TYT–AYT) ve LGS hazırlık çalışmalarının yanı sıra ortaokul ve lise öğrencilerine yönelik okula destek programları yürütülmektedir. Öğrencinin sınıf düzeyine uygun güncel program seçenekleri için WhatsApp üzerinden bilgi alabilirsiniz.",
   },
   {
+    question: "YKS programı nasıl ilerliyor?",
+    answer:
+      "Süreç öğrencinin mevcut seviyesinin belirlenmesiyle başlar. İlk dönemde ağırlık genellikle TYT'dedir; hedef alan netleştikçe AYT dersleri öne çıkar. Deneme sınavları konu bazında değerlendirilir ve çalışma planı sonuçlara göre güncellenir. Güncel ders programı için WhatsApp üzerinden bilgi alabilirsiniz.",
+  },
+  {
+    question: "LGS öğrencileri nasıl takip ediliyor?",
+    answer:
+      "LGS hazırlığı okul müfredatıyla uyumlu ilerler; okulda işlenen konu aynı hafta soru çözümüyle desteklenir. Deneme sonuçları konu bazında incelenir, eksikler kayıt altında tutulur ve süreç veliyle paylaşılır. Ayrıntılı bilgi için bizimle iletişime geçebilirsiniz.",
+  },
+  {
+    question: "Etüt sistemi nasıl çalışıyor?",
+    answer:
+      "Etüt, öğrencinin kendi eksiğiyle çalıştığı ve takıldığı soruyu sorabildiği çalışma saatidir. Amaç, anlaşılmayan konunun biriktirilmeden aynı gün kapatılmasıdır. Etüt saatleri döneme ve sınıf düzeyine göre planlandığı için güncel programı WhatsApp üzerinden paylaşıyoruz.",
+  },
+  {
+    question: "Veli bilgilendirmesi nasıl yapılıyor?",
+    answer:
+      "Öğrencinin devam durumu, çalışma planına uyumu ve akademik gelişimi hakkında veliyle düzenli iletişim kurulması yaklaşımımızın temel parçasıdır. Görüşme sıklığı ve biçimi hakkında ayrıntılı bilgiyi tanışma görüşmesinde paylaşıyoruz.",
+  },
+  {
     question: "Kayıt süreci nasıl ilerliyor?",
     answer:
       "Kayıt süreci, öğrenciyle ve veliyle yapılan bir tanışma görüşmesiyle başlar. Öğrencinin hedefi ve mevcut durumu değerlendirildikten sonra uygun program birlikte belirlenir. Güncel kayıt koşulları için WhatsApp üzerinden bilgi alabilirsiniz.",

@@ -6,8 +6,8 @@ export const post: BlogPost = {
   description:
     "YKS hazırlığına başlarken TYT ve AYT dengesini nasıl kuracağınız, hangi derslerden başlayacağınız ve deneme düzenini nasıl oturtacağınız üzerine pratik bir yol haritası.",
   category: "Sınav",
-  date: "2026-08-25",
-  updatedAt: "2026-08-25",
+  date: "2026-08-23",
+  updatedAt: "2026-08-23",
   image: "/images/blog/yks-yol-haritasi.jpg",
   imageAlt: "Öğrenciler üniversite kampüsünde binaların önünde",
   body: [
@@ -151,7 +151,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Genç Kalem Eğitim Kurumları'nda YKS (TYT–AYT) hazırlık çalışmaları, öğrencinin bulunduğu seviyeye göre planlanır ve süreç boyunca takip edilir. Kendi planınızı birlikte oluşturmak için [eğitim programlarımıza](/#egitimlerimiz) göz atabilir veya [bize ulaşabilirsiniz](/#iletisim).",
+      text: "Genç Kalem Eğitim Kurumları'nda YKS (TYT–AYT) hazırlık çalışmaları, öğrencinin bulunduğu seviyeye göre planlanır ve süreç boyunca takip edilir. Kendi planınızı birlikte oluşturmak için [Mersin YKS hazırlık programımızı](/yks-kursu-mersin) inceleyebilir veya [bize ulaşabilirsiniz](/#iletisim).",
     },
   ],
 };

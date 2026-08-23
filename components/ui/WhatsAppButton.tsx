@@ -1,4 +1,6 @@
 import { WhatsAppIcon } from "@/components/ui/BrandIcons";
+import { TrackedExternalLink } from "@/components/ui/Tracked";
+import type { ConversionEvent } from "@/lib/analytics";
 import { createWhatsAppUrl } from "@/lib/whatsapp";
 
 type Variant = "primary" | "outline" | "onDark" | "ghost";
@@ -14,6 +16,10 @@ type WhatsAppButtonProps = {
   /** Erişilebilirlik için, görünen metin bağlamı yetersizse. */
   ariaLabel?: string;
   showIcon?: boolean;
+  /** Analitikte hangi bölümden tıklandığını ayırt etmek için. */
+  source?: string;
+  /** Varsayılan whatsapp_click; navbar ve sticky için ayrı olay adı verilir. */
+  event?: ConversionEvent;
 };
 
 const base =
@@ -43,17 +49,19 @@ export function WhatsAppButton({
   className = "",
   ariaLabel,
   showIcon = true,
+  source = "unknown",
+  event = "whatsapp_click",
 }: WhatsAppButtonProps) {
   return (
-    <a
+    <TrackedExternalLink
       href={createWhatsAppUrl(message)}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={ariaLabel ?? `${label} — WhatsApp'ta yeni sekmede açılır`}
+      event={event}
+      source={source}
+      ariaLabel={ariaLabel ?? `${label} — WhatsApp'ta yeni sekmede açılır`}
       className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {showIcon ? <WhatsAppIcon size={size === "sm" ? 16 : 19} /> : null}
       <span>{label}</span>
-    </a>
+    </TrackedExternalLink>
   );
 }

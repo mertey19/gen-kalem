@@ -6,8 +6,8 @@ export const post: BlogPost = {
   description:
     "Mersin'de öğrencinize uygun eğitim kurumunu seçerken sormanız gereken sorular: program yapısı, öğrenci takibi, sınıf mevcudu, konum ve iletişim.",
   category: "Veli Rehberi",
-  date: "2026-08-26",
-  updatedAt: "2026-08-26",
+  date: "2026-08-23",
+  updatedAt: "2026-08-23",
   image: "/images/blog/kurs-secimi.jpg",
   imageAlt: "Genç Kalem'de öğrenciler ve öğretmenler bir arada",
   body: [
@@ -169,7 +169,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Genç Kalem'in programları, öğrenci takibi ve çalışma ortamı hakkında bilgi almak ya da yerinde görmek için randevu oluşturmak isterseniz [bizimle iletişime geçebilirsiniz](/#iletisim).",
+      text: "Genç Kalem'in programlarını [YKS](/yks-kursu-mersin), [LGS](/lgs-kursu-mersin) ve [bireysel akademik destek](/bireysel-ders-mersin) sayfalarından inceleyebilirsiniz. Tanışma görüşmesi için [ön kayıt formunu](/on-kayit) doldurabilir ya da [bizimle iletişime geçebilirsiniz](/#iletisim).",
     },
   ],
 };

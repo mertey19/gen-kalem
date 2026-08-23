@@ -91,7 +91,7 @@ export function Footer() {
               {programs.slice(0, 5).map((program) => (
                 <li key={program.slug}>
                   <Link
-                    href="/#egitimlerimiz"
+                    href={program.href ?? "/#egitimlerimiz"}
                     className="text-sm text-navy-200/80 transition-colors hover:text-leaf-400"
                   >
                     {program.title}

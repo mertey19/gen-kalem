@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import { WhatsAppIcon } from "@/components/ui/BrandIcons";
 import { business } from "@/data/business";
+import { trackEvent } from "@/lib/analytics";
 import { createWhatsAppUrl } from "@/lib/whatsapp";
 
 /**
@@ -36,6 +37,9 @@ export function FloatingWhatsApp() {
             href={createWhatsAppUrl(business.whatsappDefaultMessage)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              trackEvent("whatsapp_click", { source: "floating_button" })
+            }
             aria-label="WhatsApp'tan yazın — yeni sekmede açılır"
             className="group inline-flex items-center gap-3 rounded-full bg-leaf-600 py-3.5 pl-4 pr-5 text-white shadow-float transition-all duration-200 hover:scale-[1.03] hover:bg-leaf-700 hover:shadow-[0_16px_40px_-10px_rgba(70,128,26,0.7)]"
           >

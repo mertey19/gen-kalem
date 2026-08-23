@@ -1,7 +1,7 @@
 import { Clock, MapPin, Navigation, Phone } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
-import { LinkButton } from "@/components/ui/LinkButton";
+import { TrackedExternalLink } from "@/components/ui/Tracked";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
@@ -49,12 +49,15 @@ export function Location() {
                   <ul className="mt-1.5 space-y-1">
                     {business.phones.map((phone) => (
                       <li key={phone.href}>
-                        <a
+                        <TrackedExternalLink
                           href={phone.href}
+                          newTab={false}
+                          event="phone_click"
+                          source="contact_section"
                           className="text-[0.95rem] font-medium text-navy-800 underline-offset-4 transition-colors hover:text-leaf-700 hover:underline"
                         >
                           {phone.label}
-                        </a>
+                        </TrackedExternalLink>
                       </li>
                     ))}
                   </ul>
@@ -76,22 +79,34 @@ export function Location() {
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <LinkButton
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                <WhatsAppButton
+                  label="WhatsApp"
+                  message="Merhaba, kurumunuzu ziyaret etmek için randevu oluşturmak istiyorum."
+                  className="w-full"
+                  source="contact_section"
+                />
+                <TrackedExternalLink
+                  href={business.phones[0].href}
+                  newTab={false}
+                  event="phone_click"
+                  source="contact_section_button"
+                  ariaLabel={`Telefonla arayın: ${business.phones[0].label}`}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-navy-700 px-5 py-3 text-[0.95rem] font-semibold text-white transition-colors hover:bg-navy-600"
+                >
+                  <Phone size={17} aria-hidden="true" />
+                  Ara
+                </TrackedExternalLink>
+                <TrackedExternalLink
                   href={maps.directions}
-                  external
-                  variant="solid"
-                  className="w-full sm:w-auto"
+                  event="directions_click"
+                  source="contact_section"
                   ariaLabel="Yol tarifi al — Google Haritalar yeni sekmede açılır"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-navy-700/15 px-5 py-3 text-[0.95rem] font-semibold text-navy-800 transition-colors hover:border-navy-700/35"
                 >
                   <Navigation size={17} aria-hidden="true" />
-                  Yol Tarifi Al
-                </LinkButton>
-                <WhatsAppButton
-                  label="WhatsApp'tan Yaz"
-                  message="Merhaba, kurumunuzu ziyaret etmek için randevu oluşturmak istiyorum."
-                  className="w-full sm:w-auto"
-                />
+                  Yol Tarifi
+                </TrackedExternalLink>
               </div>
             </div>
           </Reveal>
