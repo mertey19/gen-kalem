@@ -91,7 +91,26 @@ Google periyodik olarak yeniden kontrol eder ve dosya yoksa doğrulama düşer.
 Search Console'da site doğrulandıktan sonra `sitemap.xml` adresini de
 göndermeniz önerilir.
 
-### 5. WhatsApp numarasını doğrulayın
+### 5. Logo / favicon
+
+Simgeler `public/logo/genc-kalem-logo.svg` dosyasından üretilmiştir:
+
+| Dosya | Kullanım |
+| --- | --- |
+| `public/favicon.ico` | 16–128 px çok boyutlu; tarayıcı sekmesi ve Google arama sonucu |
+| `public/icons/icon-192.png` · `icon-512.png` | PWA / Android, `manifest.webmanifest` |
+| `public/icons/apple-touch-icon.png` | iOS ana ekran (beyaz zeminli, saydamlık iOS'ta siyaha dönüyor) |
+| `public/logo/genc-kalem-logo.png` | 1024×1024; `Organization` yapısal verisindeki `logo` alanı |
+
+Logo değişirse SVG'yi güncelleyip bu raster sürümleri yeniden üretmek gerekir
+(1024 px'e render edip dairesel alfa maskesiyle kırpılmıştır).
+
+Google'ın arama sonucunda favicon göstermesi için ana sayfada taranabilir bir
+`<link rel="icon">` bulunması yeterlidir; bu etiketler `app/layout.tsx`
+içindeki `metadata.icons` alanından üretilir. Google'ın bunu ne zaman
+göstereceği kendi kararıdır ve taramadan sonra günler sürebilir.
+
+### 6. WhatsApp numarasını doğrulayın
 
 `data/business.ts` içinde WhatsApp hattı olarak kurumun **ilk** numarası
 tanımlıdır (`0507 712 40 04`). WhatsApp başka bir hatta bağlıysa yalnızca

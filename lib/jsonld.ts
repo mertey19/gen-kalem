@@ -16,7 +16,14 @@ export function organizationJsonLd() {
     legalName: business.legalName,
     url: siteUrl,
     telephone: business.phones.map((phone) => phone.href.replace("tel:", "")),
-    logo: absoluteUrl(business.logo.src),
+    // Google Organization logosu için raster sürüm (en az 112x112 olmalı,
+    // burada 1024x1024) ve beyaz zeminde düzgün görünmeli.
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl(business.logo.png),
+      width: 1024,
+      height: 1024,
+    },
     image: absoluteUrl("/opengraph-image"),
     address: {
       "@type": "PostalAddress",
@@ -74,7 +81,7 @@ export function blogPostingJsonLd(post: ArticleInput) {
       name: business.name,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl(business.logo.src),
+        url: absoluteUrl(business.logo.png),
       },
     },
   };

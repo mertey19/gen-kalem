@@ -43,8 +43,14 @@ export const business = {
   },
 
   logo: {
-    /** Orijinal logoyu public/logo/ içine koyup yolu güncelleyin. */
+    /** Sayfa içinde kullanılan vektör sürüm (her ölçekte net, küçük dosya). */
     src: "/logo/genc-kalem-logo.svg",
+    /**
+     * Raster sürüm. Favicon, Organization yapısal verisi ve paylaşım
+     * görselleri gibi SVG'nin her yerde çalışmadığı yüzeyler bunu kullanır.
+     * public/logo/genc-kalem-logo.svg dosyasından 1024x1024 üretilmiştir.
+     */
+    png: "/logo/genc-kalem-logo.png",
     alt: "Genç Kalem Eğitim Kurumları logosu",
     /** Logo kare oranlıdır; bozulmaması için en/boy daima eşit verilir. */
     width: 512,

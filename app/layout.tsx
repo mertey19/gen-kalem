@@ -74,9 +74,25 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  /**
+   * Google arama sonuçlarında favicon gösterebilmek için ana sayfada
+   * taranabilir bir <link rel="icon"> gerekiyor. SVG'yi modern tarayıcılar
+   * için bırakıp, her yüzeyde çalışan ICO/PNG sürümlerini önceliklendiriyoruz.
+   */
   icons: {
-    icon: [{ url: business.logo.src, type: "image/svg+xml" }],
-    apple: business.logo.src,
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48 32x32 16x16" },
+      { url: "/icons/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/icon-512.png", type: "image/png", sizes: "512x512" },
+      { url: business.logo.src, type: "image/svg+xml" },
+    ],
+    apple: [
+      {
+        url: "/icons/apple-touch-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
   },
 };
 
