@@ -10,6 +10,11 @@ import { post as kursSecimi } from "@/content/blog/mersinde-kurs-secerken-dikkat
 import { post as yksYolHaritasi } from "@/content/blog/ykse-nereden-baslamali-tyt-ayt-yol-haritasi";
 import { post as lgsHazirlik } from "@/content/blog/lgs-hazirlik-surecinde-bilinmesi-gerekenler";
 import { post as etut } from "@/content/blog/etut-nedir-ogrenciye-ne-kazandirir";
+import { post as sinavKaygisi } from "@/content/blog/sinav-kaygisi-ile-basa-cikma";
+import { post as yeniDonem } from "@/content/blog/okul-acilmadan-once-yeni-doneme-hazirlik";
+import { post as konuEksigi } from "@/content/blog/konu-eksigi-nasil-kapatilir";
+import { post as dokuzuncuSinif } from "@/content/blog/dokuzuncu-sinifa-baslayanlar-icin-rehber";
+import { post as ekranSuresi } from "@/content/blog/ogrencilerde-telefon-ve-ekran-suresi";
 
 export type { BlogBlock, BlogCategory, BlogPost };
 
@@ -24,6 +29,11 @@ const rawPosts: BlogPost[] = [
   yksYolHaritasi,
   lgsHazirlik,
   etut,
+  sinavKaygisi,
+  yeniDonem,
+  konuEksigi,
+  dokuzuncuSinif,
+  ekranSuresi,
 ];
 
 /** Aynı slug'ın iki kez tanımlanmasını derleme/çalışma anında yakalar. */
