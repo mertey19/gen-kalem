@@ -7,6 +7,7 @@ import { post as motivasyon } from "@/content/blog/ders-calisirken-motivasyonu-k
 import { post as tekrarYontemleri } from "@/content/blog/ogrenciler-icin-etkili-tekrar-yontemleri";
 import { post as veliRehberi } from "@/content/blog/veliler-icin-sinav-doneminde-destek-rehberi";
 import { post as kursSecimi } from "@/content/blog/mersinde-kurs-secerken-dikkat-edilmesi-gerekenler";
+import { post as dershaneAramasi } from "@/content/blog/mersin-dershane-aramasi";
 import { post as yksYolHaritasi } from "@/content/blog/ykse-nereden-baslamali-tyt-ayt-yol-haritasi";
 import { post as lgsHazirlik } from "@/content/blog/lgs-hazirlik-surecinde-bilinmesi-gerekenler";
 import { post as etut } from "@/content/blog/etut-nedir-ogrenciye-ne-kazandirir";
@@ -26,6 +27,7 @@ const rawPosts: BlogPost[] = [
   tekrarYontemleri,
   veliRehberi,
   kursSecimi,
+  dershaneAramasi,
   yksYolHaritasi,
   lgsHazirlik,
   etut,

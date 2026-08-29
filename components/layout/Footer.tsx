@@ -88,6 +88,14 @@ export function Footer() {
               Eğitimlerimiz
             </h2>
             <ul className="mt-4 space-y-2.5">
+              <li>
+                <Link
+                  href="/mersin-dershane"
+                  className="text-sm text-navy-200/80 transition-colors hover:text-leaf-400"
+                >
+                  Mersin Dershane
+                </Link>
+              </li>
               {programs.slice(0, 5).map((program) => (
                 <li key={program.slug}>
                   <Link

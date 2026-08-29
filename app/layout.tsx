@@ -31,21 +31,23 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${business.name} | ${business.city} ${business.district}`,
+    default: `Mersin Dershane | ${business.name}`,
     template: `%s | Genç Kalem`,
   },
   description:
-    "Mersin Akdeniz'de YKS (TYT–AYT), LGS ve okula destek programları. Genç Kalem Eğitim Kurumları'nın programları ve kayıt süreci için WhatsApp üzerinden bilgi alın.",
+    "Mersin dershane arayan veliler için Akdeniz / Cami Şerif'te YKS (TYT–AYT), LGS, etüt ve okula destek. Genç Kalem Eğitim Kurumları — WhatsApp'tan yazın.",
   keywords: [
+    "Mersin dershane",
+    "Mersin'de dershane",
+    "Mersin dershane araması",
+    "Akdeniz dershane",
+    "Cami Şerif dershane",
     "Genç Kalem Eğitim Kurumları",
-    "Mersin eğitim kurumu",
-    "Akdeniz eğitim kurumu",
-    "Mersin kurs merkezi",
-    "Mersin sınav hazırlık",
     "Mersin YKS kursu",
     "Mersin LGS kursu",
     "Mersin TYT AYT hazırlık",
     "Mersin etüt merkezi",
+    "Mersin özel öğretim kursu",
   ],
   applicationName: business.name,
   alternates: {
@@ -56,15 +58,15 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: siteUrl,
     siteName: business.name,
-    title: `${business.name} | ${business.city} ${business.district}`,
+    title: `Mersin Dershane | ${business.name}`,
     description:
-      "Mersin Akdeniz'de YKS, LGS ve okula destek programları. Planlı eğitim süreci ve düzenli takip için Genç Kalem Eğitim Kurumları.",
+      "Mersin Akdeniz'de dershane arayan öğrenciler için YKS, LGS, etüt ve okula destek. Planlı eğitim süreci ve düzenli takip — Genç Kalem.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${business.name} | ${business.city} ${business.district}`,
+    title: `Mersin Dershane | ${business.name}`,
     description:
-      "Mersin Akdeniz'de öğrencilere planlı bir eğitim süreci ve düzenli takip sunan Genç Kalem Eğitim Kurumları.",
+      "Mersin Akdeniz'de YKS, LGS ve okula destek programları. Cami Şerif'te Genç Kalem Eğitim Kurumları.",
   },
   robots: {
     index: true,

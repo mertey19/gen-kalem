@@ -14,6 +14,12 @@ export function organizationJsonLd() {
     "@id": `${siteUrl}/#organization`,
     name: business.name,
     legalName: business.legalName,
+    alternateName: [
+      business.shortName,
+      `${business.city} ${business.shortName}`,
+      "Genç Kalem Dershane",
+      "Mersin Dershane Genç Kalem",
+    ],
     url: siteUrl,
     telephone: business.phones.map((phone) => phone.href.replace("tel:", "")),
     // Google Organization logosu için raster sürüm (en az 112x112 olmalı,

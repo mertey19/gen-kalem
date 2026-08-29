@@ -87,7 +87,7 @@ export function Hero() {
               style={{ animationDelay: "120ms" }}
               className="animate-fade-up mt-6 max-w-xl text-base leading-relaxed text-navy-700/75 sm:text-lg"
             >
-              Akdeniz&apos;deki kurumumuzda <strong className="font-semibold text-navy-900">YKS (TYT–AYT)</strong>,{" "}
+              Akdeniz&apos;deki dershanemizde <strong className="font-semibold text-navy-900">YKS (TYT–AYT)</strong>,{" "}
               <strong className="font-semibold text-navy-900">LGS</strong> ve okula destek
               programları yürütüyoruz. Her öğrenciye kendi seviyesine göre bir
               çalışma planı kurar, gelişimini düzenli olarak takip eder ve
@@ -123,6 +123,15 @@ export function Hero() {
               className="animate-fade-up mt-7"
             >
               <ul className="flex flex-wrap gap-2">
+                <li>
+                  <Link
+                    href="/mersin-dershane"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-navy-100 bg-white px-3.5 py-1.5 text-[0.82rem] font-semibold text-navy-800 transition-colors hover:border-leaf-500 hover:text-leaf-700"
+                  >
+                    Mersin Dershane
+                    <ArrowRight size={13} aria-hidden="true" />
+                  </Link>
+                </li>
                 {heroPrograms.map((program) => (
                   <li key={program.slug}>
                     <Link

@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl(`/${page.slug}`),
       lastModified: new Date(lastBlogUpdate),
       changeFrequency: "monthly" as const,
-      priority: 0.9,
+      priority: page.slug === "mersin-dershane" ? 0.95 : 0.9,
     })),
     {
       url: absoluteUrl("/on-kayit"),
@@ -54,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl(`/blog/${post.slug}`),
       lastModified: new Date(post.updatedAt),
       changeFrequency: "yearly" as const,
-      priority: 0.7,
+      priority: post.slug === "mersin-dershane-aramasi" ? 0.8 : 0.7,
     })),
   ];
 }

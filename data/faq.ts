@@ -9,6 +9,11 @@ export type FaqItem = {
  */
 export const faqItems: FaqItem[] = [
   {
+    question: "Mersin'de dershane arıyorum, Genç Kalem ne sunuyor?",
+    answer:
+      "Genç Kalem Eğitim Kurumları, Mersin Akdeniz'de YKS (TYT–AYT), LGS, okula destek, etüt ve bireysel akademik destek programları yürüten bir özel öğretim kursudur. Günlük dilde dershane olarak aranırız. Öğrencinin sınıfını belirterek WhatsApp'tan yazmanız yeterli; size uygun seçenekleri iletelim.",
+  },
+  {
     question: "Eğitim programları hakkında nasıl bilgi alabilirim?",
     answer:
       "Programlarımızın içeriği, sınıf düzeyleri ve güncel çalışma takvimi hakkında en doğru bilgiyi WhatsApp üzerinden bizimle iletişime geçerek alabilirsiniz. Mesajlarınıza en kısa sürede dönüş yapıyoruz.",

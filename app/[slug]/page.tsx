@@ -63,7 +63,9 @@ export default async function LandingPageRoute({ params }: PageProps) {
 
   if (!page) notFound();
 
-  const program = getProgramBySlug(page.programSlug);
+  const program = page.programSlug
+    ? getProgramBySlug(page.programSlug)
+    : undefined;
   const related = page.relatedPosts
     .map((postSlug) => getPostBySlug(postSlug))
     .filter((post) => post !== undefined)

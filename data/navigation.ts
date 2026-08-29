@@ -42,6 +42,7 @@ export const utilityLinks = [
 
 export const footerNavItems: NavItem[] = [
   { label: "Ana Sayfa", href: "/#anasayfa" },
+  { label: "Mersin Dershane", href: "/mersin-dershane" },
   { label: "Hakkımızda", href: "/#hakkimizda" },
   { label: "Eğitimlerimiz", href: "/#egitimlerimiz" },
   { label: "Blog", href: "/blog" },

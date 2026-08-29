@@ -9,22 +9,22 @@ import { getAllSummaries, getCategories } from "@/data/blog";
 import { breadcrumbJsonLd, jsonLdScript } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: { absolute: "Genç Kalem Blog | Öğrenciler İçin Rehberler" },
+  title: { absolute: "Genç Kalem Blog | Mersin Dershane Rehberleri" },
   description:
-    "Ders çalışma yöntemleri, sınav süreci, motivasyon ve akademik gelişim üzerine öğrencilere ve velilere yönelik içerikler.",
+    "Mersin'de dershane arayan veliler ve öğrenciler için ders çalışma, sınav süreci, LGS–YKS hazırlık ve kurs seçimi rehberleri.",
   alternates: { canonical: "/blog" },
   openGraph: {
     type: "website",
-    title: "Genç Kalem Blog | Öğrenciler İçin Rehberler",
+    title: "Genç Kalem Blog | Mersin Dershane Rehberleri",
     description:
-      "Ders çalışma yöntemleri, sınav süreci, motivasyon ve akademik gelişim üzerine öğrencilere ve velilere yönelik içerikler.",
+      "Mersin'de dershane arayan veliler ve öğrenciler için ders çalışma, sınav süreci ve kurs seçimi rehberleri.",
     url: "/blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Genç Kalem Blog | Öğrenciler İçin Rehberler",
+    title: "Genç Kalem Blog | Mersin Dershane Rehberleri",
     description:
-      "Ders çalışma yöntemleri, sınav süreci, motivasyon ve akademik gelişim üzerine içerikler.",
+      "Mersin'de dershane arayan veliler ve öğrenciler için ders çalışma, sınav süreci ve kurs seçimi rehberleri.",
   },
 };
 

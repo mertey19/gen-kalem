@@ -13,7 +13,7 @@ export const post: BlogPost = {
   body: [
     {
       type: "p",
-      text: "Mersin'de öğrencisi için kurs arayan bir veli, kısa sürede birbirine benzeyen çok sayıda tanıtımla karşılaşır. Hemen hepsi deneyimli kadrodan, düzenli takipten ve başarıdan söz eder. Bu tanıtımlar tek başına ayırt edici olmadığı için karar çoğu zaman fiyata veya eve yakınlığa kalır.",
+      text: "Mersin'de öğrencisi için dershane veya kurs arayan bir veli, kısa sürede birbirine benzeyen çok sayıda tanıtımla karşılaşır. Hemen hepsi deneyimli kadrodan, düzenli takipten ve başarıdan söz eder. Bu tanıtımlar tek başına ayırt edici olmadığı için karar çoğu zaman fiyata veya eve yakınlığa kalır.",
     },
     {
       type: "p",
@@ -169,7 +169,7 @@ export const post: BlogPost = {
     },
     {
       type: "p",
-      text: "Genç Kalem'in programlarını [YKS](/yks-kursu-mersin), [LGS](/lgs-kursu-mersin) ve [bireysel akademik destek](/bireysel-ders-mersin) sayfalarından inceleyebilirsiniz. Tanışma görüşmesi için [ön kayıt formunu](/on-kayit) doldurabilir ya da [bizimle iletişime geçebilirsiniz](/#iletisim).",
+      text: "Genç Kalem'in programlarını [YKS](/yks-kursu-mersin), [LGS](/lgs-kursu-mersin) ve [bireysel akademik destek](/bireysel-ders-mersin) sayfalarından inceleyebilirsiniz. Mersin dershane aramasını baştan sona nasıl yapacağınızı [ayrı bir rehberde](/blog/mersin-dershane-aramasi) topladık. Tanışma görüşmesi için [ön kayıt formunu](/on-kayit) doldurabilir ya da [bizimle iletişime geçebilirsiniz](/#iletisim).",
     },
   ],
 };

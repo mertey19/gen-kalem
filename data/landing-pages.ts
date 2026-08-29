@@ -13,8 +13,8 @@ export type LandingFaq = { question: string; answer: string };
 
 export type LandingPage = {
   slug: string;
-  /** İlgili program kartının slug'ı. */
-  programSlug: string;
+  /** İlgili program kartının slug'ı. Hub sayfalarında boş bırakılabilir. */
+  programSlug?: string;
   eyebrow: string;
   /** Sayfanın tek H1'i. */
   h1: string;
@@ -33,6 +33,110 @@ export type LandingPage = {
 
 export const landingPages: LandingPage[] = [
   {
+    slug: "mersin-dershane",
+    eyebrow: "Mersin Dershane",
+    h1: "Mersin'de Dershane — YKS ve LGS Hazırlık",
+    metaTitle: "Mersin Dershane | YKS ve LGS Kursu — Genç Kalem",
+    metaDescription:
+      "Mersin Akdeniz'de dershane arayan veliler için YKS (TYT–AYT), LGS, etüt ve bireysel destek. Cami Şerif'te Genç Kalem Eğitim Kurumları. WhatsApp'tan yazın.",
+    intro: [
+      "Mersin'de dershane arıyorsanız bakmanız gereken yer tabeladaki isim değil, öğrencinin haftalık düzeninin nasıl kurulduğudur. Genç Kalem Eğitim Kurumları, Akdeniz ilçesinde Cami Şerif'te YKS, LGS, okula destek, etüt ve bireysel akademik destek programları yürüten bir özel öğretim kursudur.",
+      "Günlük dilde hâlâ dershane denir; resmi adımız Genç Kalem Özel Öğretim Kursu'dur. Velinin aradığı şey aynıdır: seviyeye göre plan, takıldığı yerde soru sorabilme, deneme analizi ve veliyle kopmayan iletişim.",
+    ],
+    audience: [
+      "Mersin'de YKS (TYT–AYT) dershanesi arayan lise öğrencileri ve mezunlar",
+      "LGS'ye hazırlanan 7 ve 8. sınıf öğrencileri",
+      "Okul derslerinde eksiği birikmiş ortaokul ve lise öğrencileri",
+      "Akdeniz, Yenişehir, Mezitli veya Toroslar'dan merkeze ulaşımı olan aileler",
+    ],
+    body: [
+      { type: "h2", text: "Mersin dershane aramasında Genç Kalem ne sunuyor?" },
+      {
+        type: "p",
+        text: "Kurumun çıkış noktası tek bir sorudur: öğrenci şu anda nerede duruyor ve hedefine ulaşmak için hangi sırayla ne çalışmalı? Bu yüzden herkese aynı takvimi uygulamıyoruz. Program, seviye tespitiyle başlar; deneme sonuçlarına göre güncellenir.",
+      },
+      {
+        type: "ul",
+        items: [
+          "[YKS hazırlık](/yks-kursu-mersin): TYT ağırlıklı başlangıç, hedef alana göre AYT planı, konu bazlı deneme analizi.",
+          "[LGS hazırlık](/lgs-kursu-mersin): okul müfredatıyla uyumlu ilerleyiş, yeni nesil soru çalışması, veli bilgilendirmesi.",
+          "[Etüt ve soru çözümü](/mersin-etut-merkezi): takılan sorunun aynı gün sorulabildiği çalışma saatleri.",
+          "[Bireysel akademik destek](/bireysel-ders-mersin): belirli bir derste eksiği birikmiş öğrenciler için birebir plan.",
+        ],
+      },
+
+      { type: "h2", text: "Dershane seçimini neye göre yapıyoruz?" },
+      {
+        type: "p",
+        text: "Mersin'de dershane arayan bir ailenin çoğu zaman elinde üç ölçüt vardır: yakınlık, fiyat ve ilk izlenim. Bunlar yok sayılamaz; ancak tek başına yeterli değildir. Asıl ayrım, öğrencinin eksiğinin görünür kılınıp kılınmadığıdır.",
+      },
+      {
+        type: "ol",
+        items: [
+          "Seviye belirlenir: hangi konular tamam, hangileri eksik.",
+          "Haftalık akış kurulur: konu, soru, tekrar ve deneme için ayrı bloklar.",
+          "Deneme okunur: yanlışlar sebebine göre ayrılır, plan buna göre değişir.",
+          "Veli bilgilendirilir: devam, uyum ve eğilim büyümeden paylaşılır.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Bu dört adım yoksa kurumun adı dershane olsa da süreç rastlantıya kalır. Ayrıntılı bir karşılaştırma listesi için [Mersin dershane araması rehberine](/blog/mersin-dershane-aramasi) bakabilirsiniz.",
+      },
+
+      { type: "h2", text: "Neden Akdeniz / Cami Şerif?" },
+      {
+        type: "p",
+        text: "Yol süresi çalışma süresinden çalar. Merkezî bir konum, özellikle etüt için gün içinde tekrar gelmesi gereken öğrenciler açısından fark yaratır. Cami Şerif, Akdeniz'in yanı sıra Yenişehir, Mezitli ve Toroslar'dan gelen öğrenciler için de ulaşılabilir bir noktadır.",
+      },
+      {
+        type: "p",
+        text: "Adresimiz: Cami Şerif, 5228. Sk., Vakıf İşhanı No:4 Kat:4, Akdeniz / Mersin. Kurumu yerinde görmek isterseniz randevuyu mümkünse ders saatleri içinde alın; boş bir binayı gezmek yerine çalışırken görmek daha doğru bir fikir verir.",
+      },
+
+      { type: "h2", text: "Kimler için uygun değil?" },
+      {
+        type: "p",
+        text: "Kesin sıralama veya net vaadi arayan aileler için doğru adres değiliz. Sınav sonucu öğrencinin çalışmasına, başlangıç seviyesine ve sürece bağlıdır. Bizim işimiz süreci görünür ve sürdürülebilir kılmaktır; sonucu garanti etmemektir.",
+      },
+      {
+        type: "callout",
+        title: "İlk adım",
+        text: "Öğrencinin sınıfını ve hedefini WhatsApp'tan yazmanız yeterli. Size uygun program seçeneklerini iletelim; isterseniz tanışma görüşmesi planlayalım.",
+      },
+    ],
+    faq: [
+      {
+        question: "Genç Kalem bir dershane mi?",
+        answer:
+          "Günlük dilde dershane olarak aranırız; resmi adımız Genç Kalem Özel Öğretim Kursu'dur. Mersin Akdeniz'de YKS, LGS, okula destek, etüt ve bireysel akademik destek programları yürütüyoruz.",
+      },
+      {
+        question: "Yenişehir, Mezitli veya Toroslar'dan gelebilir miyiz?",
+        answer:
+          "Evet. Kurum Cami Şerif / Akdeniz'de, merkeze yakın bir noktadadır. Ulaşımın öğrencinin haftalık düzenine uyup uymadığını tanışma görüşmesinde birlikte değerlendiriyoruz.",
+      },
+      {
+        question: "YKS ve LGS aynı kurumda mı yürütülüyor?",
+        answer:
+          "Evet, her iki sınav için de hazırlık programımız var. Planlar birbirinin kopyası değildir: LGS okul müfredatıyla uyumlu ilerler, YKS'de TYT–AYT dengesi öğrencinin hedef alanına göre kurulur.",
+      },
+      {
+        question: "Kayıt için ne yapmam gerekiyor?",
+        answer:
+          "Öğrencinin sınıf düzeyini belirterek WhatsApp'tan yazmanız yeterli. Uygun programı konuşur, isterseniz kurum ziyareti ve ön kayıt adımlarını planlarız.",
+      },
+    ],
+    relatedPosts: [
+      "mersin-dershane-aramasi",
+      "mersinde-kurs-secerken-dikkat-edilmesi-gerekenler",
+      "etut-nedir-ogrenciye-ne-kazandirir",
+    ],
+    image: "/images/blog/kurs-secimi.jpg",
+    imageAlt: "Genç Kalem Eğitim Kurumları'nda Mersin dershane ortamında öğrenciler ve öğretmenler",
+  },
+
+  {
     slug: "yks-kursu-mersin",
     programSlug: "yks-hazirlik",
     eyebrow: "YKS Hazırlık",
@@ -41,7 +145,7 @@ export const landingPages: LandingPage[] = [
     metaDescription:
       "Mersin Akdeniz'de YKS (TYT–AYT) hazırlık programı. Seviye tespiti, haftalık plan, deneme analizi ve düzenli öğrenci takibi. Bilgi için WhatsApp'tan yazın.",
     intro: [
-      "Genç Kalem Eğitim Kurumları, Mersin'in Akdeniz ilçesinde lise öğrencileri ve mezunlar için YKS hazırlık çalışmaları yürütüyor. Programın çıkış noktası tek bir soru: öğrenci şu anda nerede duruyor ve hedefine ulaşmak için hangi sırayla ne çalışmalı?",
+      "Genç Kalem Eğitim Kurumları, Mersin'in Akdeniz ilçesinde lise öğrencileri ve mezunlar için YKS hazırlık çalışmaları yürütüyor. Mersin'de dershane arayan ailelerin sık sorduğu soru şudur: öğrenci şu anda nerede duruyor ve hedefine ulaşmak için hangi sırayla ne çalışmalı?",
       "Bu yüzden herkese aynı takvimi uygulamıyoruz. TYT ve AYT dengesi, öğrencinin hedef alanına ve kalan süreye göre kuruluyor; plan süreç içinde deneme sonuçlarına bakılarak güncelleniyor.",
     ],
     audience: [
@@ -123,7 +227,7 @@ export const landingPages: LandingPage[] = [
     relatedPosts: [
       "ykse-nereden-baslamali-tyt-ayt-yol-haritasi",
       "deneme-sinavi-sonuclari-nasil-degerlendirilmeli",
-      "sinav-doneminde-zaman-yonetimi",
+      "mersin-dershane-aramasi",
     ],
     image: "/images/blog/yks-yol-haritasi.jpg",
     imageAlt: "Genç Kalem öğrencileri üniversite kampüsünde",
@@ -138,7 +242,7 @@ export const landingPages: LandingPage[] = [
     metaDescription:
       "Mersin Akdeniz'de LGS hazırlık programı. Okul müfredatıyla uyumlu ilerleyiş, yeni nesil soru çalışması, deneme takibi ve veli bilgilendirmesi.",
     intro: [
-      "Genç Kalem Eğitim Kurumları, Mersin Akdeniz'de 7 ve 8. sınıf öğrencileri için LGS hazırlık çalışmaları yürütüyor. LGS birçok öğrencinin girdiği ilk büyük sınav olduğu için süreç yalnızca konu çalışmakla ilgili değil; sınav düzenine, süre baskısına ve kendi hatalarını değerlendirmeye alışmakla da ilgili.",
+      "Genç Kalem Eğitim Kurumları, Mersin Akdeniz'de 7 ve 8. sınıf öğrencileri için LGS hazırlık çalışmaları yürütüyor. Mersin dershane aramasında LGS'yi ayrı düşünmek gerekir: bu, birçok öğrencinin girdiği ilk büyük sınavdır ve süreç yalnızca konu çalışmakla ilgili değil; sınav düzenine, süre baskısına ve kendi hatalarını değerlendirmeye alışmakla da ilgilidir.",
       "Programın en belirgin özelliği okul müfredatıyla uyumlu ilerlemesi. Okulda işlenen konu aynı hafta içinde soru çözümüyle pekiştirildiğinde, öğrenci hem okul sınavına hem LGS'ye aynı çalışmayla hazırlanmış olur.",
     ],
     audience: [
@@ -219,7 +323,7 @@ export const landingPages: LandingPage[] = [
     relatedPosts: [
       "lgs-hazirlik-surecinde-bilinmesi-gerekenler",
       "veliler-icin-sinav-doneminde-destek-rehberi",
-      "verimli-ders-calisma-programi-nasil-hazirlanir",
+      "mersin-dershane-aramasi",
     ],
     image: "/images/blog/lgs-hazirlik.jpg",
     imageAlt: "Genç Kalem öğrencileri bir gezide topluca",
