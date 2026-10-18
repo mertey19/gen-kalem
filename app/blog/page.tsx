@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { BlogList } from "@/components/blog/BlogList";
+import { DistrictGuides } from "@/components/blog/DistrictGuides";
 import { BlogCard } from "@/components/ui/BlogCard";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,20 +12,20 @@ import { breadcrumbJsonLd, jsonLdScript } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: { absolute: "Genç Kalem Blog | Mersin Dershane Rehberleri" },
   description:
-    "Mersin'de dershane arayan veliler ve öğrenciler için ders çalışma, sınav süreci, LGS–YKS hazırlık ve kurs seçimi rehberleri.",
+    "Mersin'in 13 ilçesi için dershane seçim rehberleri. YKS, LGS, etüt, ulaşım ve haftalık çalışma planını öğrenci ihtiyacına göre karşılaştırın.",
   alternates: { canonical: "/blog" },
   openGraph: {
     type: "website",
     title: "Genç Kalem Blog | Mersin Dershane Rehberleri",
     description:
-      "Mersin'de dershane arayan veliler ve öğrenciler için ders çalışma, sınav süreci ve kurs seçimi rehberleri.",
+      "Mersin'in 13 ilçesi için YKS, LGS, etüt, ulaşım ve dershane seçim rehberleri. İlçenize göre karşılaştırma listenizi oluşturun.",
     url: "/blog",
   },
   twitter: {
     card: "summary_large_image",
     title: "Genç Kalem Blog | Mersin Dershane Rehberleri",
     description:
-      "Mersin'de dershane arayan veliler ve öğrenciler için ders çalışma, sınav süreci ve kurs seçimi rehberleri.",
+      "Mersin'in 13 ilçesi için YKS, LGS, etüt, ulaşım ve dershane seçim rehberleri. İlçenize göre karşılaştırma listenizi oluşturun.",
   },
 };
 
@@ -95,6 +96,8 @@ export default function BlogIndexPage() {
           </div>
         </Container>
       </section>
+
+      <DistrictGuides />
 
       {/* Yazı listesi */}
       <section

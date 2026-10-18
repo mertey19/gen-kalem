@@ -94,6 +94,11 @@ export const landingPages: LandingPage[] = [
         text: "Adresimiz: Cami Şerif, 5228. Sk., Vakıf İşhanı No:4 Kat:4, Akdeniz / Mersin. Kurumu yerinde görmek isterseniz randevuyu mümkünse ders saatleri içinde alın; boş bir binayı gezmek yerine çalışırken görmek daha doğru bir fikir verir.",
       },
 
+      { type: "h2", text: "İlçenize göre dershane seçimini değerlendirin" },
+      {
+        type: "p",
+        text: "Akdeniz, Yenişehir, Mezitli, Toroslar, Tarsus, Erdemli, Silifke, Anamur, Mut, Gülnar, Bozyazı, Aydıncık ve Çamlıyayla için ayrı rehberler hazırladık. [Mersin'in 13 ilçesi için dershane blog listesinden](/blog/mersin-ilceleri-dershane-rehberi) kendi ilçenizi seçerek ulaşım, program ve kayıt sorularını inceleyebilirsiniz. Kurumun adresi Akdeniz/Cami Şerif'tir; uzak ilçeler için yerel seçenekleri ve ulaşım yükünü ayrıca değerlendirin.",
+      },
       { type: "h2", text: "Kimler için uygun değil?" },
       {
         type: "p",
@@ -128,6 +133,7 @@ export const landingPages: LandingPage[] = [
       },
     ],
     relatedPosts: [
+      "mersin-ilceleri-dershane-rehberi",
       "mersin-dershane-aramasi",
       "mersinde-kurs-secerken-dikkat-edilmesi-gerekenler",
       "etut-nedir-ogrenciye-ne-kazandirir",

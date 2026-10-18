@@ -3,6 +3,7 @@ export type BlogCategory =
   | "Sınav"
   | "Motivasyon"
   | "Öğrenci Rehberi"
+  | "Mersin İlçe Rehberleri"
   | "Veli Rehberi";
 
 /**

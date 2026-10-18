@@ -46,6 +46,7 @@ export const footerNavItems: NavItem[] = [
   { label: "Hakkımızda", href: "/#hakkimizda" },
   { label: "Eğitimlerimiz", href: "/#egitimlerimiz" },
   { label: "Blog", href: "/blog" },
+  { label: "İlçe Rehberleri", href: "/blog/mersin-ilceleri-dershane-rehberi" },
   { label: "Galeri", href: "/#galeri" },
   { label: "Ön Kayıt Formu", href: "/on-kayit" },
   { label: "İş Başvurusu", href: "/is-basvurusu" },

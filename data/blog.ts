@@ -1,4 +1,6 @@
 import type { BlogBlock, BlogCategory, BlogPost } from "@/content/types";
+import { post as districtHub } from "@/content/blog/mersin-ilceleri-dershane-rehberi";
+import { districtGuides } from "@/data/district-guides";
 
 import { post as calismaProgrami } from "@/content/blog/verimli-ders-calisma-programi-nasil-hazirlanir";
 import { post as zamanYonetimi } from "@/content/blog/sinav-doneminde-zaman-yonetimi";
@@ -20,6 +22,8 @@ import { post as ekranSuresi } from "@/content/blog/ogrencilerde-telefon-ve-ekra
 export type { BlogBlock, BlogCategory, BlogPost };
 
 const rawPosts: BlogPost[] = [
+  districtHub,
+  ...districtGuides,
   calismaProgrami,
   zamanYonetimi,
   denemeAnalizi,

@@ -154,6 +154,16 @@ Hiçbir kurum bilgisi bileşenlerin içine sabit yazılmamıştır.
 
 ### Yeni blog yazısı eklemek
 
+18 Ekim 2026'da Mersin'in 13 ilçesi için seçim rehberleri ve bir ana blog
+listesi eklendi: `/blog/mersin-ilceleri-dershane-rehberi`.
+İlçe yazıları `content/blog/<ilce>-dershane-secimi.ts` dosyalarında;
+toplu kayıtları `data/district-guides.ts`, ortak yayın ve konum bilgileri
+`content/district-guide.ts` içindedir. `data/blog.ts` bu yazıları normal
+yayın akışına, kategori filtresine ve site haritasına dahil eder.
+Blog listesindeki ilçe bağlantıları sunucu HTML'inde de yer alır.
+İlçe kapsamının kaynağı Mersin Valiliği kent özetidir; başka ilçelerde şube,
+servis, güncel ücret veya başarı sıralaması iddiası eklenmemiştir.
+
 1. `content/blog/<slug>.ts` dosyasını oluşturun ve `BlogPost` tipinde bir
    `post` nesnesi dışa aktarın.
 2. `data/blog.ts` içindeki `rawPosts` dizisine ekleyin.

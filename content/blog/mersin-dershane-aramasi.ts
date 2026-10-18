@@ -7,7 +7,7 @@ export const post: BlogPost = {
     "Mersin'de dershane arayan veliler için 2026 rehberi. YKS, LGS ve etüt seçeneklerini karşılaştırırken bakmanız gerekenler; Akdeniz / Cami Şerif konumunda Genç Kalem.",
   category: "Veli Rehberi",
   date: "2026-08-29",
-  updatedAt: "2026-08-29",
+  updatedAt: "2026-10-18",
   image: "/images/blog/kurs-secimi.jpg",
   imageAlt:
     "Genç Kalem Eğitim Kurumları'nda Mersin'de dershane arayan velilerin ziyaret edebileceği çalışma ortamı",
@@ -162,6 +162,11 @@ export const post: BlogPost = {
       ],
     },
 
+    { type: "h2", text: "Mersin'in tüm ilçeleri için ayrı seçim rehberleri" },
+    {
+      type: "p",
+      text: "Aramanızı yaşadığınız ilçeye göre ayrıntılandırmak için [13 ilçeyi kapsayan Mersin dershane blog listesini](/blog/mersin-ilceleri-dershane-rehberi) kullanabilirsiniz. Akdeniz, Yenişehir, Mezitli ve Toroslar'da okul çıkışı ulaşımı; Tarsus ve Erdemli'de ilçe içi/merkez karşılaştırması; diğer ilçelerde yerelde sürdürülebilir destek ve yolculuk planı ele alınıyor. İlçe yazıları farklı ilçelerde şube bulunduğu anlamına gelmez.",
+    },
     { type: "h2", text: "Mersin dershane araması için kısa kontrol listesi" },
     {
       type: "p",
