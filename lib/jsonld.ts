@@ -19,6 +19,7 @@ export function organizationJsonLd() {
       `${business.city} ${business.shortName}`,
       "Genç Kalem Dershane",
       "Mersin Dershane Genç Kalem",
+      "Genç Kalem Dershanesi Mersin",
     ],
     url: siteUrl,
     telephone: business.phones.map((phone) => phone.href.replace("tel:", "")),
@@ -82,6 +83,12 @@ export function blogPostingJsonLd(post: ArticleInput) {
     inLanguage: "tr-TR",
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
+    author: {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: business.name,
+      url: siteUrl,
+    },
     publisher: {
       "@type": "EducationalOrganization",
       name: business.name,
@@ -112,6 +119,27 @@ export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
       name: item.name,
       item: absoluteUrl(item.url),
     })),
+  };
+}
+
+/** Görünen program içeriğini tanımlar; doğrulanmamış fiyat veya puan eklemez. */
+export function educationServiceJsonLd(input: {
+  slug: string;
+  name: string;
+  description: string;
+  serviceType: string;
+}) {
+  const url = absoluteUrl(`/${input.slug}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    url,
+    name: input.name,
+    description: input.description,
+    serviceType: input.serviceType,
+    provider: { "@id": `${siteUrl}/#organization` },
+    areaServed: { "@type": "City", name: business.city },
   };
 }
 

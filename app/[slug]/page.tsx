@@ -15,7 +15,7 @@ import { getPostBySlug, toSummary } from "@/data/blog";
 import { business, maps } from "@/data/business";
 import { getLandingPage, landingPages } from "@/data/landing-pages";
 import { getProgramBySlug } from "@/data/programs";
-import { breadcrumbJsonLd, jsonLdScript } from "@/lib/jsonld";
+import { breadcrumbJsonLd, educationServiceJsonLd, jsonLdScript } from "@/lib/jsonld";
 import { whatsAppMessageFor } from "@/lib/whatsapp";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -89,6 +89,18 @@ export default async function LandingPageRoute({ params }: PageProps) {
         description={page.intro[0]}
         breadcrumb={[{ label: page.eyebrow }]}
       />
+
+      {program ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLdScript(educationServiceJsonLd({
+            slug: page.slug,
+            name: page.h1,
+            description: page.metaDescription,
+            serviceType: program.title,
+          }))}
+        />
+      ) : null}
 
       <section className="bg-mist py-14 sm:py-16">
         <Container>

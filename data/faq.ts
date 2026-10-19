@@ -9,6 +9,10 @@ export type FaqItem = {
  */
 export const faqItems: FaqItem[] = [
   {
+    question: "Mersin dershane fiyatları için nasıl bilgi alabilirim?",
+    answer: "Öğrencinin sınıfını, hedef sınavını ve düşündüğünüz eğitim dönemini belirterek WhatsApp'tan yazabilirsiniz. Güncel teklifin ders, kaynak, deneme, etüt ve ek destek kapsamını birlikte netleştiririz. Sitede teyit edilmemiş rakamsal ücret veya indirim yayımlamıyoruz.",
+  },
+  {
     question: "Mersin'de dershane arıyorum, Genç Kalem ne sunuyor?",
     answer:
       "Genç Kalem Eğitim Kurumları, Mersin Akdeniz'de YKS (TYT–AYT), LGS, okula destek, etüt ve bireysel akademik destek programları yürüten bir özel öğretim kursudur. Günlük dilde dershane olarak aranırız. Öğrencinin sınıfını belirterek WhatsApp'tan yazmanız yeterli; size uygun seçenekleri iletelim.",

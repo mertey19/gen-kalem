@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: `%s | Genç Kalem`,
   },
   description:
-    "Mersin dershane arayan veliler için Akdeniz / Cami Şerif'te YKS (TYT–AYT), LGS, etüt ve okula destek. Genç Kalem Eğitim Kurumları — WhatsApp'tan yazın.",
+    "Mersin Akdeniz/Cami Şerif'te Genç Kalem: YKS, TYT–AYT, LGS, mezun hazırlığı, etüt ve okula destek. Program, ücret kapsamı ve kayıt için bilgi alın.",
   keywords: [
     "Mersin dershane",
     "Mersin'de dershane",

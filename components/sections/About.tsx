@@ -56,7 +56,7 @@ export function About() {
             <SectionHeader
               eyebrow="Hakkımızda"
               title="Genç Kalem'i yakından tanıyın"
-              description="Genç Kalem Eğitim Kurumları, Mersin'in Akdeniz ilçesinde dershane arayan öğrencilere düzenli bir eğitim ortamı sunmak üzere çalışmaktadır."
+              description="Genç Kalem Eğitim Kurumları, Mersin Akdeniz/Cami Şerif'te öğrencilere düzenli bir eğitim ortamı sunar. Resmî kurum adımız Genç Kalem Özel Öğretim Kursu'dur."
             />
 
             <Reveal delay={0.08}>

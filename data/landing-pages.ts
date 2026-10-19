@@ -1,4 +1,5 @@
 import type { BlogBlock } from "@/content/types";
+import { additionalLandingPages } from "@/data/additional-landing-pages";
 
 /**
  * Yerel arama niyetine yönelik program sayfaları.
@@ -32,10 +33,11 @@ export type LandingPage = {
 };
 
 export const landingPages: LandingPage[] = [
+  ...additionalLandingPages,
   {
     slug: "mersin-dershane",
     eyebrow: "Mersin Dershane",
-    h1: "Mersin'de Dershane — YKS ve LGS Hazırlık",
+    h1: "Mersin Dershane ve Özel Öğretim Kursu",
     metaTitle: "Mersin Dershane | YKS ve LGS Kursu — Genç Kalem",
     metaDescription:
       "Mersin Akdeniz'de dershane arayan veliler için YKS (TYT–AYT), LGS, etüt ve bireysel destek. Cami Şerif'te Genç Kalem Eğitim Kurumları. WhatsApp'tan yazın.",
@@ -99,6 +101,21 @@ export const landingPages: LandingPage[] = [
         type: "p",
         text: "Akdeniz, Yenişehir, Mezitli, Toroslar, Tarsus, Erdemli, Silifke, Anamur, Mut, Gülnar, Bozyazı, Aydıncık ve Çamlıyayla için ayrı rehberler hazırladık. [Mersin'in 13 ilçesi için dershane blog listesinden](/blog/mersin-ilceleri-dershane-rehberi) kendi ilçenizi seçerek ulaşım, program ve kayıt sorularını inceleyebilirsiniz. Kurumun adresi Akdeniz/Cami Şerif'tir; uzak ilçeler için yerel seçenekleri ve ulaşım yükünü ayrıca değerlendirin.",
       },
+      { type: "h2", text: "Mersin'de en iyi dershane nasıl seçilir?" },
+      {
+        type: "p",
+        text: "Mersin dershaneleri arasında karşılaştırma yaparken tek bir kurum adını herkes için en iyi kabul etmek yerine öğrencinin ihtiyacını esas alın. Seviye değerlendirmesi, öğretmene soru sorabilme, deneme analizi ve sürdürülebilir ulaşım somut ölçütlerdir. [Kurs seçimi rehberini](/blog/mersinde-kurs-secerken-dikkat-edilmesi-gerekenler) aynı soruları her görüşmede sormak için kullanabilirsiniz.",
+      },
+      { type: "h2", text: "Kurs merkezi, ücret ve kayıt bilgisi" },
+      {
+        type: "p",
+        text: "Mersin'de bir kurs merkezi veya sınav hazırlık kursu arıyorsanız ders adı kadar kapsamı da öğrenin. [Dershane fiyatları rehberinde](/mersin-dershane-fiyatlari) kaynak, deneme ve etüt kalemlerini; [öğrenci takibi sayfasında](/mersin-ogrenci-takibi) plan ve geri bildirim yaklaşımını açıklıyoruz. Güncel program ve kayıt görüşmesi için [ön kayıt talebinizi](/on-kayit) iletebilirsiniz.",
+      },
+      { type: "h2", text: "Toroslar'a ve Yenişehir'e yakın dershane arayanlar" },
+      {
+        type: "p",
+        text: "Kurumumuz Cami Şerif/Akdeniz'dedir. Toroslar'a yakın dershane veya Yenişehir'e yakın dershane ararken yalnızca ilçe adına değil, kendi okulunuzdan veya evinizden kapıya kadar ulaşımınıza bakın. [Toroslar rehberinde](/blog/toroslar-dershane-secimi) mahalleden başlayan yolculuğu, [Yenişehir rehberinde](/blog/yenisehir-dershane-secimi) okul sonrası geçişi değerlendirebilirsiniz. Sabit yol süresi veya servis varsaymadan gerçek ders saatinde kontrol edin.",
+      },
       { type: "h2", text: "Kimler için uygun değil?" },
       {
         type: "p",
@@ -146,12 +163,12 @@ export const landingPages: LandingPage[] = [
     slug: "yks-kursu-mersin",
     programSlug: "yks-hazirlik",
     eyebrow: "YKS Hazırlık",
-    h1: "Mersin'de YKS (TYT–AYT) Hazırlık Kursu",
-    metaTitle: "Mersin YKS Kursu | TYT–AYT Hazırlık — Genç Kalem",
+    h1: "Mersin YKS Dershanesi: TYT ve AYT Hazırlık Kursu",
+    metaTitle: "Mersin YKS Dershanesi | TYT–AYT Kursu — Genç Kalem",
     metaDescription:
-      "Mersin Akdeniz'de YKS (TYT–AYT) hazırlık programı. Seviye tespiti, haftalık plan, deneme analizi ve düzenli öğrenci takibi. Bilgi için WhatsApp'tan yazın.",
+      "Mersin Akdeniz'de YKS, TYT ve AYT hazırlık kursu. 11–12. sınıf ve mezun adaylar için hedefe göre plan, deneme analizi ve öğrenci takibi.",
     intro: [
-      "Genç Kalem Eğitim Kurumları, Mersin'in Akdeniz ilçesinde lise öğrencileri ve mezunlar için YKS hazırlık çalışmaları yürütüyor. Mersin'de dershane arayan ailelerin sık sorduğu soru şudur: öğrenci şu anda nerede duruyor ve hedefine ulaşmak için hangi sırayla ne çalışmalı?",
+      "Genç Kalem Eğitim Kurumları, Mersin'in Akdeniz ilçesinde lise öğrencileri ve mezunlar için YKS hazırlık çalışmaları yürütüyor. Mersin'de üniversite hazırlık kursu arayan aday için başlangıç sorumuz şu: öğrenci şu anda nerede duruyor ve hedefine ulaşmak için hangi sırayla ne çalışmalı?",
       "Bu yüzden herkese aynı takvimi uygulamıyoruz. TYT ve AYT dengesi, öğrencinin hedef alanına ve kalan süreye göre kuruluyor; plan süreç içinde deneme sonuçlarına bakılarak güncelleniyor.",
     ],
     audience: [
@@ -184,12 +201,16 @@ export const landingPages: LandingPage[] = [
       { type: "h2", text: "TYT ve AYT dengesi" },
       {
         type: "p",
-        text: "Hazırlığın ilk döneminde ağırlık genellikle TYT'dedir. TYT tüm adayların girdiği bölüm olduğu ve sıralamayı büyük ölçüde belirlediği için, buradaki netleri sağlamlaştırmadan AYT'ye ağırlık vermek çoğu öğrenci için verimli olmaz.",
+        text: "Mersin TYT kursu arayan aday için temel konular, okuma, işlem ve süre kullanımı birlikte değerlendirilir. TYT ve AYT'yi herkes için aynı sırayla yürütmek yerine öğrencinin seviyesi ve hedef alanına uygun denge kurulur. Bir başlıkta ön koşul eksiği varsa o boşluğa dönülür; AYT çalışmasını belirsiz biçimde ertelemek gerekmez.",
       },
       {
         type: "p",
-        text: "Konular ilerledikçe ve hedef alan netleştikçe denge AYT lehine kaydırılır. Bu geçişin ne zaman yapılacağı öğrenciye göre değişir; deneme sonuçları ve konu tamamlanma durumu birlikte değerlendirilir.",
+        text: "Mersin AYT kursu seçerken hedef alanınızda hangi derslerin sunulduğunu ve bu derslerin takvimde nasıl yer aldığını öğrenin. Konu, uygulama ve deneme sonuçları birlikte değerlendirilir. Üniversite sınavına hazırlıkta tek bir sabit dağılım yerine gelişime göre güncellenebilen bir plan amaçlanır; güncel branş ve ders saatleri kurumla görüşülür.",
       },
+      { type: "h2", text: "11. sınıf ve 12. sınıf dershane planı" },
+      { type: "p", text: "11. sınıfta okul konularını sağlamlaştırmak ve temel eksikleri izlemek; 12. sınıfta ise okul takvimini sınav hazırlığı, deneme ve tekrarla birleştirmek önemlidir. Mersin'de 11. sınıf veya 12. sınıf dershane ararken hangi görevlerin sınıfa göre değiştiğini sorun. Belirli okul derslerindeki ihtiyaçlar için [okula destek seçeneklerini](/mersin-okula-destek-kursu) ayrıca değerlendirebilirsiniz." },
+      { type: "h2", text: "Mezun adaylar ve 2027 YKS hazırlığı" },
+      { type: "p", text: "Mezun adayda önceki sınavın analizi ve günlük çalışma düzeni ayrı ele alınır. [Mezun dershanesi sayfasında](/mersin-mezun-dershanesi) görüşmeye hazırlanabileceğiniz soruları, [2027 YKS rehberinde](/blog/mersin-2027-yks-hazirlik) 12. sınıf ve mezun aday için hazırlık adımlarını bulabilirsiniz. Resmî sınav takvimi ve başvuru koşullarını ÖSYM duyurularından izleyin." },
 
       { type: "h2", text: "Deneme sınavları nasıl kullanılıyor?" },
       {
@@ -243,8 +264,8 @@ export const landingPages: LandingPage[] = [
     slug: "lgs-kursu-mersin",
     programSlug: "lgs-hazirlik",
     eyebrow: "LGS Hazırlık",
-    h1: "Mersin'de LGS Hazırlık Kursu",
-    metaTitle: "Mersin LGS Kursu | 7–8. Sınıf Hazırlık — Genç Kalem",
+    h1: "Mersin LGS Dershanesi ve Hazırlık Kursu",
+    metaTitle: "Mersin LGS Dershanesi | 7–8. Sınıf Kursu — Genç Kalem",
     metaDescription:
       "Mersin Akdeniz'de LGS hazırlık programı. Okul müfredatıyla uyumlu ilerleyiş, yeni nesil soru çalışması, deneme takibi ve veli bilgilendirmesi.",
     intro: [
@@ -258,6 +279,10 @@ export const landingPages: LandingPage[] = [
       "Çalışma düzenini tek başına kuramayan öğrenciler",
     ],
     body: [
+      { type: "h2", text: "7. sınıf kursu ve 8. sınıf hazırlığı" },
+      { type: "p", text: "7. sınıfta amaç temel dersleri takip etmek ve sürdürülebilir çalışma alışkanlığı oluşturmaktır. 8. sınıf dershane programında okul konuları, soru yorumlama ve sınav hazırlığı birlikte ele alınır. Mersin'de liseye hazırlık kursu arayan ailelerin bu iki düzeyin takvimini ayrı sorması gerekir. Okul derslerindeki belirli eksikler için [ortaokul destek yaklaşımını](/mersin-okula-destek-kursu) da inceleyebilirsiniz." },
+      { type: "h2", text: "2027 LGS hazırlığı ve güncel kapsam" },
+      { type: "p", text: "2027 hedefleyen 8. sınıf öğrencileri için [LGS hazırlık rehberinde](/blog/mersin-2027-lgs-hazirlik) okul, kurs, deneme ve veli desteğini aynı haftada planlıyoruz. Genç Kalem Akdeniz/Cami Şerif'tedir; Akdeniz LGS dershanesi arayanlar güncel saat ve kapsamı doğrudan öğrenebilir. [LGS kurs fiyatları rehberi](/mersin-dershane-fiyatlari#mersin-lgs-kurs-fiyatlari) ücret teklifinde sorulacak kalemleri açıklar." },
       { type: "h2", text: "Okulla uyumlu bir akış" },
       {
         type: "p",
@@ -285,7 +310,7 @@ export const landingPages: LandingPage[] = [
       },
       {
         type: "p",
-        text: "Bunun tek çözümü, konu bittikçe bu tarz sorularla düzenli olarak karşılaşmaktır. Soru tipini tanımamak da bir tür eksikliktir ve çalışılarak kapatılabilir.",
+        text: "Konuya uygun sorularda verilen ve isteneni ayırmak, çözüm yolunu açıklamak ve benzer soruda bağımsız uygulama yapmak bu becerileri geliştirmeye yardımcı olabilir. [Yeni nesil soru çözümü rehberinde](/blog/mersin-yeni-nesil-soru-cozumu) tablo ve yorumlama örneğiyle bu adımları gösteriyoruz.",
       },
 
       { type: "h2", text: "Deneme takibi" },
@@ -400,6 +425,10 @@ export const landingPages: LandingPage[] = [
         type: "p",
         text: "Etüt, öğrencinin o hafta zorlandığı derse göre şekillenir. İşlem ağırlıklı derslerde soru çözümü, bilgi ağırlıklı derslerde konu tamamlama öne çıkar. Güncel etüt saatleri ve hangi derslerde destek verildiği döneme göre değiştiği için en doğru bilgiyi WhatsApp üzerinden paylaşıyoruz.",
       },
+      { type: "h2", text: "Deneme sınavı hazırlığı ve soru çözüm desteği" },
+      { type: "p", text: "Mersin'de soru çözüm kursu veya deneme sınavı hazırlık kursu arayan öğrenci için önemli soru, deneme sonrasında hangi çalışmanın yapılacağıdır. Yanlışlar konu ve neden bazında değerlendirilir; tekrar eden eksikler soru çözümü ve yeniden kontrolle ele alınır. [Deneme analizi rehberini](/blog/deneme-sinavi-sonuclari-nasil-degerlendirilmeli) ve [öğrenci takip yaklaşımını](/mersin-ogrenci-takibi) inceleyebilirsiniz. Ayrı bir deneme paketi veya dışarıdan katılımın güncel koşullarını kurumdan öğrenin." },
+      { type: "h2", text: "Öğrenci etüt merkezi seçerken erişilebilir saatler" },
+      { type: "p", text: "Etüdün okuldan sonra kullanılabilir olması, sunulan saat kadar önemlidir. Mersin öğrenci etüt merkezi araştırırken ihtiyaç duyulan branşın hangi gün bulunduğunu ve soruların nasıl sıraya alındığını sorun. [Matematik destek rehberi](/blog/mersin-matematik-ders-destegi) ve [yeni nesil soru çözümü örneği](/blog/mersin-yeni-nesil-soru-cozumu) etüde getireceğiniz soruları seçmenize yardımcı olabilir." },
     ],
     faq: [
       {
@@ -431,8 +460,8 @@ export const landingPages: LandingPage[] = [
     slug: "bireysel-ders-mersin",
     programSlug: "bireysel-akademik-destek",
     eyebrow: "Bireysel Akademik Destek",
-    h1: "Mersin'de Bireysel Akademik Destek",
-    metaTitle: "Mersin Bireysel Ders ve Akademik Destek — Genç Kalem",
+    h1: "Mersin Birebir Ders ve Bireysel Akademik Destek",
+    metaTitle: "Mersin Birebir Ders ve Akademik Destek — Genç Kalem",
     metaDescription:
       "Mersin Akdeniz'de bireysel akademik destek. Öğrencinin eksik olduğu konulara odaklanan, seviyesine göre planlanan birebir çalışma desteği.",
     intro: [
@@ -467,6 +496,8 @@ export const landingPages: LandingPage[] = [
         ],
       },
 
+      { type: "h2", text: "Matematik ders desteğinde hangi eksik çalışılır?" },
+      { type: "p", text: "Mersin matematik ders desteği arayan öğrencinin zorlandığı adımı görmek gerekir: konu bilgisi, işlem, soru yorumlama veya sonucu kontrol etme. [Matematik destek rehberinde](/blog/mersin-matematik-ders-destegi) örnek denklem ve kontrol adımlarını gösteriyoruz. Güncel matematik branşı, sınıf düzeyi ve saat uygunluğunu görüşmede öğrenin; aynı kapsamın her dönem sunulduğunu varsaymayın." },
       { type: "h2", text: "Ne kadar sürer?" },
       {
         type: "p",

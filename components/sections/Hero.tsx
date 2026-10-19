@@ -73,9 +73,9 @@ export function Hero() {
               style={{ animationDelay: "60ms" }}
               className="animate-fade-up mt-6 text-[2.35rem] leading-[1.08] font-extrabold tracking-tight text-navy-900 sm:text-5xl lg:text-[3.6rem] xl:text-[4rem]"
             >
-              Mersin&apos;de başarıya giden yolda{" "}
+              Mersin&apos;de YKS ve LGS{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">yanınızdayız.</span>
+                <span className="relative z-10">dershanesi.</span>
                 <span
                   aria-hidden="true"
                   className="absolute inset-x-0 -bottom-1 z-0 h-1.5 rounded-full bg-leaf-500/80 sm:h-2"
@@ -87,7 +87,8 @@ export function Hero() {
               style={{ animationDelay: "120ms" }}
               className="animate-fade-up mt-6 max-w-xl text-base leading-relaxed text-navy-700/75 sm:text-lg"
             >
-              Akdeniz&apos;deki dershanemizde <strong className="font-semibold text-navy-900">YKS (TYT–AYT)</strong>,{" "}
+              Genç Kalem Eğitim Kurumları olarak Akdeniz / Cami Şerif&apos;teki
+              özel öğretim kursumuzda <strong className="font-semibold text-navy-900">YKS (TYT–AYT)</strong>,{" "}
               <strong className="font-semibold text-navy-900">LGS</strong> ve okula destek
               programları yürütüyoruz. Her öğrenciye kendi seviyesine göre bir
               çalışma planı kurar, gelişimini düzenli olarak takip eder ve

@@ -12,20 +12,20 @@ import { breadcrumbJsonLd, jsonLdScript } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: { absolute: "Genç Kalem Blog | Mersin Dershane Rehberleri" },
   description:
-    "Mersin'in 13 ilçesi için dershane seçim rehberleri. YKS, LGS, etüt, ulaşım ve haftalık çalışma planını öğrenci ihtiyacına göre karşılaştırın.",
+    "Mersin'de YKS ve LGS hazırlığı, dershane seçimi, ücret kapsamı, matematik desteği ve 13 ilçe için rehberler. 2027 çalışma planlarını inceleyin.",
   alternates: { canonical: "/blog" },
   openGraph: {
     type: "website",
     title: "Genç Kalem Blog | Mersin Dershane Rehberleri",
     description:
-      "Mersin'in 13 ilçesi için YKS, LGS, etüt, ulaşım ve dershane seçim rehberleri. İlçenize göre karşılaştırma listenizi oluşturun.",
+      "Mersin'de YKS ve LGS hazırlığı, dershane seçimi, ücret kapsamı ve ilçe rehberleri. 2027 çalışma planlarını inceleyin.",
     url: "/blog",
   },
   twitter: {
     card: "summary_large_image",
     title: "Genç Kalem Blog | Mersin Dershane Rehberleri",
     description:
-      "Mersin'in 13 ilçesi için YKS, LGS, etüt, ulaşım ve dershane seçim rehberleri. İlçenize göre karşılaştırma listenizi oluşturun.",
+      "Mersin'de YKS ve LGS hazırlığı, dershane seçimi, ücret kapsamı ve ilçe rehberleri. 2027 çalışma planlarını inceleyin.",
   },
 };
 

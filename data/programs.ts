@@ -55,6 +55,7 @@ export const programs: Program[] = [
       "Okul derslerinde geride kalmamak, konuları zamanında tamamlamak ve sınav öncesi tekrar yapmak için yürütülen destek çalışmaları.",
     icon: "bookOpen",
     highlights: ["Konu tamamlama", "Sınav öncesi tekrar", "Müfredat takibi"],
+    href: "/mersin-okula-destek-kursu",
   },
   {
     slug: "bireysel-akademik-destek",
@@ -84,6 +85,7 @@ export const programs: Program[] = [
       "Öğrencinin hedefine uygun çalışma planı oluşturması ve süreç boyunca yönlendirilmesi için yapılan görüşmeler.",
     icon: "compass",
     highlights: ["Hedef belirleme", "Çalışma planı", "Süreç görüşmeleri"],
+    href: "/mersin-ogrenci-takibi",
   },
   {
     slug: "veli-bilgilendirme",

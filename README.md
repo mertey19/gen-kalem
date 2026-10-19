@@ -183,6 +183,17 @@ Yazı gövdesi yapısal bloklarla tutulur (`p`, `h2`, `h3`, `ul`, `ol`,
 
 ## Mimari
 
+19 Ekim 2026'da 50 arama için içerik eşleştirmesi ve eksik konu sayfaları
+tamamlandı. Ücret/kapsam, mezun hazırlığı, okula destek ve öğrenci takibi
+sayfaları `data/additional-landing-pages.ts` içindedir. 2027 YKS, 2027 LGS,
+matematik desteği ve yeni nesil soru çözümü yazıları normal blog akışına
+dahildir. Sorguların birincil sayfa eşleştirmeleri ve doğruluk notları
+`docs/seo-keyword-map.md` dosyasında tutulur.
+
+Program sayfalarının paylaşım görselleri `app/[slug]/opengraph-image.tsx`
+ile üretilir. Görünür program bilgileri için fiyat ve puan içermeyen
+`Service`, bloglarda kurum yazarlığı ve mevcut breadcrumb verisi kullanılır.
+
 ```
 app/
   layout.tsx              kök metadata, JSON-LD, header/footer, yüzen CTA'lar

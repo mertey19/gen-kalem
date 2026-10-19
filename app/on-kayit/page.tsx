@@ -1,5 +1,6 @@
 import { CalendarCheck, MessagesSquare, Route } from "lucide-react";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { PreRegistrationForm } from "@/components/forms/PreRegistrationForm";
 import { Container } from "@/components/ui/Container";
@@ -9,22 +10,22 @@ import { business, maps } from "@/data/business";
 import { breadcrumbJsonLd, jsonLdScript } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Ön Kayıt Formu",
+  title: "Mersin Dershane Kayıt ve Ön Kayıt Formu",
   description:
-    "Genç Kalem Eğitim Kurumları ön kayıt formu. Öğrenci bilgilerinizi iletin, programlar ve kayıt süreci hakkında sizi bilgilendirelim.",
+    "Genç Kalem Mersin dershane ön kayıt formu. YKS, LGS, mezun hazırlığı ve etüt için sınıfınızı paylaşın; program, ücret kapsamı ve kayıt koşullarını görüşün.",
   alternates: { canonical: "/on-kayit" },
   openGraph: {
     type: "website",
-    title: "Ön Kayıt Formu | Genç Kalem",
+    title: "Mersin Dershane Kayıt ve Ön Kayıt | Genç Kalem",
     description:
-      "Öğrenci bilgilerinizi iletin, programlar ve kayıt süreci hakkında sizi bilgilendirelim.",
+      "YKS, LGS, mezun hazırlığı ve etüt için sınıfınızı paylaşın; güncel program, ücret kapsamı ve kayıt koşullarını görüşün.",
     url: "/on-kayit",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ön Kayıt Formu | Genç Kalem",
+    title: "Mersin Dershane Kayıt ve Ön Kayıt | Genç Kalem",
     description:
-      "Öğrenci bilgilerinizi iletin, programlar ve kayıt süreci hakkında sizi bilgilendirelim.",
+      "YKS, LGS, mezun hazırlığı ve etüt için sınıfınızı paylaşın; güncel program, ücret kapsamı ve kayıt koşullarını görüşün.",
   },
 };
 
@@ -64,7 +65,7 @@ export default function PreRegistrationPage() {
 
       <PageHero
         eyebrow="Ön Kayıt"
-        title="Ön kayıt formu"
+        title="Mersin dershane ön kayıt formu"
         description="Aşağıdaki formu doldurarak ön kayıt talebinizi iletebilirsiniz. Ön kayıt bir taahhüt değildir; amacı sizi tanımak ve doğru programı birlikte belirlemektir."
         breadcrumb={[{ label: "Ön Kayıt Formu" }]}
       />
@@ -133,6 +134,39 @@ export default function PreRegistrationPage() {
                 </a>
               </div>
             </Reveal>
+          </div>
+        </Container>
+      </section>
+      <section aria-labelledby="kayit-gorusmesi-baslik" className="bg-white py-14 sm:py-16">
+        <Container>
+          <div className="max-w-3xl">
+            <h2 id="kayit-gorusmesi-baslik" className="font-display text-2xl font-bold text-navy-900">
+              Kayıt görüşmesinde neleri netleştirmeli?
+            </h2>
+            <p className="mt-4 leading-relaxed text-navy-700/80">
+              Sınıfınızı, hedef sınavınızı, ihtiyaç duyduğunuz dersleri ve hangi
+              ilçeden ulaşacağınızı paylaşın. Güncel ders günleri, etüt, deneme,
+              kaynaklar ve ücret kapsamı görüşmede birlikte değerlendirilir.
+              Ön kayıt talebi kesin kayıt veya kontenjan garantisi oluşturmaz.
+            </p>
+            <nav aria-label="Kayıt öncesi program bilgileri" className="mt-5">
+              <ul className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-leaf-800">
+                {[
+                  { href: "/yks-kursu-mersin", label: "YKS, TYT ve AYT" },
+                  { href: "/lgs-kursu-mersin", label: "LGS ve 7–8. sınıf" },
+                  { href: "/mersin-mezun-dershanesi", label: "Mezun hazırlığı" },
+                  { href: "/mersin-etut-merkezi", label: "Etüt ve soru çözümü" },
+                  { href: "/mersin-dershane-fiyatlari", label: "Ücret kapsamı" },
+                ].map((item) => (
+                  <li key={item.href}><Link href={item.href} className="underline underline-offset-4 hover:text-leaf-700">{item.label}</Link></li>
+                ))}
+              </ul>
+            </nav>
+            <p className="mt-5 text-sm leading-relaxed text-navy-700/75">
+              Formdaki bilgiler önce bir mesaj önizlemesi olarak hazırlanır.
+              Kontrol ettikten sonra WhatsApp&apos;ta açabilir ve gönderebilirsiniz.
+              Kurum adresimiz: {business.address}.
+            </p>
           </div>
         </Container>
       </section>

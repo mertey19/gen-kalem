@@ -1,6 +1,10 @@
 import type { BlogBlock, BlogCategory, BlogPost } from "@/content/types";
 import { post as districtHub } from "@/content/blog/mersin-ilceleri-dershane-rehberi";
 import { districtGuides } from "@/data/district-guides";
+import { post as yks2027 } from "@/content/blog/mersin-2027-yks-hazirlik";
+import { post as lgs2027 } from "@/content/blog/mersin-2027-lgs-hazirlik";
+import { post as matematikDestegi } from "@/content/blog/mersin-matematik-ders-destegi";
+import { post as yeniNesilSorular } from "@/content/blog/mersin-yeni-nesil-soru-cozumu";
 
 import { post as calismaProgrami } from "@/content/blog/verimli-ders-calisma-programi-nasil-hazirlanir";
 import { post as zamanYonetimi } from "@/content/blog/sinav-doneminde-zaman-yonetimi";
@@ -22,6 +26,10 @@ import { post as ekranSuresi } from "@/content/blog/ogrencilerde-telefon-ve-ekra
 export type { BlogBlock, BlogCategory, BlogPost };
 
 const rawPosts: BlogPost[] = [
+  yks2027,
+  lgs2027,
+  matematikDestegi,
+  yeniNesilSorular,
   districtHub,
   ...districtGuides,
   calismaProgrami,

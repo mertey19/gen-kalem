@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Container } from "@/components/ui/Container";
 import { ProgramCard } from "@/components/ui/ProgramCard";
 import { Reveal } from "@/components/ui/Reveal";
@@ -47,6 +49,22 @@ export function Programs() {
             </Reveal>
           ))}
         </ul>
+        <nav aria-label="Program, ücret ve hazırlık rehberleri" className="mt-8 border-t border-navy-100 pt-6">
+          <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-leaf-800">
+            {[
+              { href: "/mersin-mezun-dershanesi", label: "Mezun YKS hazırlığı" },
+              { href: "/mersin-dershane-fiyatlari", label: "Ücret ve kapsam rehberi" },
+              { href: "/blog/mersin-2027-yks-hazirlik", label: "2027 YKS çalışma planı" },
+              { href: "/blog/mersin-2027-lgs-hazirlik", label: "2027 LGS hazırlık rehberi" },
+            ].map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="underline underline-offset-4 transition-colors hover:text-leaf-700">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </Container>
     </section>
   );

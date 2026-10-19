@@ -2,15 +2,17 @@ import type { BlogPost } from "@/content/types";
 
 export const post: BlogPost = {
   slug: "mersinde-kurs-secerken-dikkat-edilmesi-gerekenler",
-  title: "Mersin'de Kurs Seçerken Nelere Dikkat Etmeli?",
+  title: "Mersin'de En İyi Dershane Nasıl Seçilir? Kurs Rehberi",
   description:
-    "Mersin'de öğrencinize uygun eğitim kurumunu seçerken sormanız gereken sorular: program yapısı, öğrenci takibi, sınıf mevcudu, konum ve iletişim.",
+    "Mersin dershaneleri arasında öğrencinize uygun kursu seçmek için program, öğrenci takibi, ücret kapsamı, etüt ve ulaşımı karşılaştırma rehberi.",
   category: "Veli Rehberi",
   date: "2026-08-23",
-  updatedAt: "2026-08-23",
+  updatedAt: "2026-10-19",
   image: "/images/blog/kurs-secimi.jpg",
   imageAlt: "Genç Kalem'de öğrenciler ve öğretmenler bir arada",
   body: [
+    { type: "h2", text: "Mersin en iyi dershane aramasını nasıl değerlendirmeli?" },
+    { type: "p", text: "'Mersin en iyi dershane' diye aramak bir başlangıç olabilir; fakat herkes için geçerli, doğrulanmış bir sıralama sunmuyoruz. Bir kurumun öğrenciye uygunluğu hedef, seviye, öğretmene erişim ve haftalık düzen birlikte değerlendirilerek anlaşılır. Aşağıdaki soruları aynı öğrencinin ihtiyacını anlatarak farklı kurumlara sormak, karşılaştırmayı tanıtım sloganlarından daha somut hale getirir." },
     {
       type: "p",
       text: "Mersin'de öğrencisi için dershane veya kurs arayan bir veli, kısa sürede birbirine benzeyen çok sayıda tanıtımla karşılaşır. Hemen hepsi deneyimli kadrodan, düzenli takipten ve başarıdan söz eder. Bu tanıtımlar tek başına ayırt edici olmadığı için karar çoğu zaman fiyata veya eve yakınlığa kalır.",
@@ -120,6 +122,7 @@ export const post: BlogPost = {
     },
 
     { type: "h2", text: "Ücret ve koşulları yazılı olarak netleştirin" },
+    { type: "p", text: "[Mersin dershane fiyatları rehberinde](/mersin-dershane-fiyatlari) YKS, LGS, etüt ve bireysel destek tekliflerini karşılaştırırken sorulacak kalemleri topladık. Teyit edilmiş ücret bilgisi olmadan rakam veya indirim varsaymayın. Takip hizmetini anlamak için [öğrenci takibi ve sınav rehberliği sayfasındaki](/mersin-ogrenci-takibi) soruları da kullanabilirsiniz." },
     {
       type: "p",
       text: "Ücret tek başına bir kalite göstergesi değildir; ne en pahalı ne de en uygun seçenek otomatik olarak doğru seçimdir. Önemli olan, ödediğiniz tutarın karşılığında tam olarak neyi aldığınızın net olmasıdır.",
